@@ -36,4 +36,4 @@ Test script compiles with `-Werror` and checks 24 positive/negative input cases.
 
 **Important:** The SLR(1) and LR(0) examples use fixed tables for stated grammars, not automatic parser-table construction. CYK and Earley are chart-based recognizers, not LR shift/reduce parsers. The PEG example is for one explicitly coded grammar, not a PEG generator.
 
-For broader compiler coursework, **canonical LR(1), LALR(1), GLR, and automatic LL(1)/LR table generation** are additional algorithms that are not implemented here. These examples are educational and do not claim complete coverage of every parser variant.
+A reusable **SLR(1), canonical LR(1) (CLR), and LALR(1)** table-building implementation is now available in [lr_family/](lr_family/), along with grammars and 25 automated checks. GLR and unrestricted parser-generator features remain outside scope. These examples are educational and do not claim complete coverage of every parser variant.
