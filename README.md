@@ -63,7 +63,7 @@ The dedicated [parsers/](parsers/) directory contains **12 implementations**.
 | CYK (chart/dynamic programming) | [05_cyk.c](parsers/bottom_up/05_cyk.c) |
 | Earley (chart parsing) | [06_earley.c](parsers/bottom_up/06_earley.c) |
 
-CYK and Earley are **general chart-parsing approaches**, not LR shift-reduce algorithms. These examples use fixed grammars. Canonical LR(1), LALR(1), GLR, and automatic parse-table generation have **not** been added.
+CYK and Earley are **general chart-parsing approaches**, not LR shift-reduce algorithms. These examples use fixed grammars. SLR(1), canonical LR(1) (CLR), and LALR(1) table construction are now available in [parsers/lr_family/](parsers/lr_family/). GLR and general-purpose parser-generator features are not included.
 
 Read [the parser guide](parsers/README.md) for the exact supported grammars.
 
@@ -122,3 +122,11 @@ Contributions with new implementations, corrected algorithms, explanatory commen
 ## Repository
 
 Maintained at [Shubha-fm/Compiler-Design](https://github.com/Shubha-fm/Compiler-Design).
+
+## SLR(1), CLR(1), and LALR(1) parser generator
+
+The [LR-family C implementation](parsers/lr_family/README.md) includes ACTION/GOTO table construction, three example grammars, expected conflict detection, and 25 automated checks.
+
+```bash
+bash parsers/lr_family/test_lr_family.sh
+```
