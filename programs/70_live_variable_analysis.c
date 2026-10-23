@@ -1,0 +1,3 @@
+/* Backward liveness for a straight-line sequence of x=y assignments. */
+#include <stdio.h>
+int main(void){int n;char lhs[100],rhs[100];unsigned live=0;if(scanf("%d",&n)!=1||n<0||n>100)return 1;for(int i=0;i<n;i++)if(scanf(" %c %c",&lhs[i],&rhs[i])!=2||lhs[i]<'a'||lhs[i]>'z'||rhs[i]<'a'||rhs[i]>'z')return 1;for(int i=n-1;i>=0;i--){live&=~(1u<<(lhs[i]-'a'));live|=1u<<(rhs[i]-'a');printf("before %d:",i);for(int v=0;v<26;v++)if(live&(1u<<v))printf(" %c",'a'+v);putchar('\n');}return 0;}
