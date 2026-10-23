@@ -1,0 +1,3 @@
+/* For a linear sequence of assignments, show last reaching definition of each a-z variable. */
+#include <stdio.h>
+int main(void){int n,last[26];for(int i=0;i<26;i++)last[i]=-1;if(scanf("%d",&n)!=1||n<0||n>100)return 1;for(int i=0;i<n;i++){char lhs,rhs;if(scanf(" %c %c",&lhs,&rhs)!=2||lhs<'a'||lhs>'z'||rhs<'a'||rhs>'z')return 1;printf("stmt %d: use %c from %d\n",i,rhs,last[rhs-'a']);last[lhs-'a']=i;}return 0;}
