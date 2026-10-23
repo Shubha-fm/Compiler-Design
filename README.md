@@ -1,6 +1,6 @@
 # Compiler Design Programs in C
 
-A collection of **50 numbered C programs** and **12 additional parser examples** for learning compiler construction. Topics include lexical analysis, automata, grammars, top-down and bottom-up parsing, intermediate code generation, optimization, and introductory code analysis.
+A collection of **70 numbered C programs** and **12 additional parser examples** for learning compiler construction. Topics include lexical analysis, automata, grammars, top-down and bottom-up parsing, intermediate code generation, optimization, and introductory code analysis.
 
 > **Educational scope:** Each program is a standalone example. Several use fixed grammars or demonstrate a single transformation. This repository is not a complete C compiler or a general-purpose parser-generator toolkit.
 
@@ -10,7 +10,7 @@ A collection of **50 numbered C programs** and **12 additional parser examples**
 Compiler-Design/
 ├── 01_lexical_analysis.c ... 20_dfa_binary_suffix.c   # Original programs 01–20
 ├── programs/
-│   └── 21_keyword_lookup.c ... 50_expression_ast.c    # Additional programs 21–50
+│   └── 21_keyword_lookup.c ... 70_live_variable_analysis.c    # Additional programs 21–70
 ├── parsers/
 │   ├── top_down/                                      # Six top-down examples
 │   ├── bottom_up/                                     # Six bottom-up/chart examples
@@ -130,3 +130,16 @@ The [LR-family C implementation](parsers/lr_family/README.md) includes ACTION/GO
 ```bash
 bash parsers/lr_family/test_lr_family.sh
 ```
+
+## New programs 51–70
+
+Twenty additional C11 examples cover scanner utilities, literal recognition, finite-state transducers, parsing-tree traversal, TAC, indirect triples, short-circuit code, DAG reuse, dominators, reaching definitions, and backward liveness.
+
+- [Programs 51–70 catalog](programs/README_51_70.md)
+- [Sample test script](tests/test_programs_51_70.sh)
+
+```bash
+bash tests/test_programs_51_70.sh
+```
+
+These are limited educational implementations. Passing representative sample tests is not a substitute for exhaustive validation.
