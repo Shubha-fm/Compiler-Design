@@ -1,6 +1,6 @@
 # Compiler Design Programs in C
 
-A collection of **70 numbered C programs** and **12 additional parser examples** for learning compiler construction. Topics include lexical analysis, automata, grammars, top-down and bottom-up parsing, intermediate code generation, optimization, and introductory code analysis.
+A collection of **80 numbered C programs** and **12 additional parser examples** for learning compiler construction. Topics include lexical analysis, automata, grammars, top-down and bottom-up parsing, intermediate code generation, optimization, and introductory code analysis.
 
 > **Educational scope:** Each program is a standalone example. Several use fixed grammars or demonstrate a single transformation. This repository is not a complete C compiler or a general-purpose parser-generator toolkit.
 
@@ -10,7 +10,7 @@ A collection of **70 numbered C programs** and **12 additional parser examples**
 Compiler-Design/
 ├── 01_lexical_analysis.c ... 20_dfa_binary_suffix.c   # Original programs 01–20
 ├── programs/
-│   └── 21_keyword_lookup.c ... 70_live_variable_analysis.c    # Additional programs 21–70
+│   └── 21_keyword_lookup.c ... 80_three_address_to_pseudocode.c    # Additional programs 21–80
 ├── parsers/
 │   ├── top_down/                                      # Six top-down examples
 │   ├── bottom_up/                                     # Six bottom-up/chart examples
@@ -143,3 +143,21 @@ bash tests/test_programs_51_70.sh
 ```
 
 These are limited educational implementations. Passing representative sample tests is not a substitute for exhaustive validation.
+
+## New programs 71–80
+
+Ten further C11 examples have been added to [programs/](programs/):
+
+- **71–74:** whitespace normalization, octal literals, string literal checking, and source token offsets.
+- **75–76:** DFA avoiding consecutive ones and infix-to-postfix translation.
+- **77–80:** constant branch pruning, CFG successor lists, stack-frame offsets, and TAC-to-stack-code translation.
+
+Read the [71–80 program guide](programs/README_71_80.md) for scope and compilation examples.
+
+### Test the latest programs
+
+```bash
+bash tests/test_programs_71_80.sh
+```
+
+The ten smoke tests cover representative inputs, but they have not been established as an exhaustive correctness guarantee.
