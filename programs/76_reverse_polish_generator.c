@@ -1,0 +1,4 @@
+/* Convert + and * infix with single-letter operands and parentheses to postfix. */
+#include <stdio.h>
+#include <ctype.h>
+int main(void){char s[256],stack[256];int top=0;if(!fgets(s,sizeof s,stdin))return 1;for(int i=0;s[i]&&s[i]!='\n';i++){char c=s[i];if(isspace((unsigned char)c))continue;if(isalpha((unsigned char)c))putchar(c);else if(c=='(')stack[top++]=c;else if(c==')'){while(top&&stack[top-1]!='(')putchar(stack[--top]);if(!top)return 1;top--;}else if(c=='+'||c=='*'){while(top&&stack[top-1]!='('&&stack[top-1]=='*'&&c=='+')putchar(stack[--top]);while(top&&stack[top-1]==c)putchar(stack[--top]);stack[top++]=c;}else return 1;}while(top){if(stack[top-1]=='(')return 1;putchar(stack[--top]);}putchar('\n');return 0;}
