@@ -1,0 +1,3 @@
+/* BFS over production dependencies; start S, rules S->AB, A->a, B->b, X->x. */
+#include <stdio.h>
+int main(void){char nt[]="SABX";int reach[4]={1,0,0,0},edges[4][4]={{0,1,1,0}};for(int change=1;change;){change=0;for(int i=0;i<4;i++)if(reach[i])for(int j=0;j<4;j++)if(edges[i][j]&&!reach[j])reach[j]=change=1;}printf("Reachable:");for(int i=0;i<4;i++)if(reach[i])printf(" %c",nt[i]);putchar('\n');return 0;}
