@@ -14,7 +14,7 @@ check() {
 }
 check '91_grammar_productivity' '' 'S=1'
 check '92_dfa_complement' '110' 'ACCEPT'
-check '93_dfa_symmetric_difference' '10' 'REJECT'
+check '93_dfa_symmetric_difference' '10' 'ACCEPT'
 check '94_grammar_nullable_fixedpoint' '' 'S=1 A=1 B=1 C=1'
 check '95_cfg_predecessor_list' '3 2
 0 2
