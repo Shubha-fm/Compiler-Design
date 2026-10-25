@@ -1,6 +1,6 @@
 # Compiler Design Programs in C
 
-A collection of **90 numbered C programs** and **12 additional parser examples** for learning compiler construction. Topics include lexical analysis, automata, grammars, top-down and bottom-up parsing, intermediate code generation, optimization, and introductory code analysis.
+A collection of **100 numbered C programs** and **12 additional parser examples** for learning compiler construction. Topics include lexical analysis, automata, grammars, top-down and bottom-up parsing, intermediate code generation, optimization, and introductory code analysis.
 
 > **Educational scope:** Each program is a standalone example. Several use fixed grammars or demonstrate a single transformation. This repository is not a complete C compiler or a general-purpose parser-generator toolkit.
 
@@ -10,7 +10,7 @@ A collection of **90 numbered C programs** and **12 additional parser examples**
 Compiler-Design/
 ├── 01_lexical_analysis.c ... 20_dfa_binary_suffix.c   # Original programs 01–20
 ├── programs/
-│   └── 21_keyword_lookup.c ... 90_basic_block_partition.c    # Additional programs 21–90
+│   └── 21_keyword_lookup.c ... 100_expression_type_checker.c    # Additional programs 21–100
 ├── parsers/
 │   ├── top_down/                                      # Six top-down examples
 │   ├── bottom_up/                                     # Six bottom-up/chart examples
@@ -181,3 +181,16 @@ bash tests/test_programs_81_90.sh
 ```
 
 Some new examples demonstrate **fixed** grammars and automata, rather than accepting arbitrary definitions. The test cases are illustrative; they do not establish exhaustive correctness.
+
+## New programs 91–100
+
+Ten additional C11 examples cover grammar productivity and nullability, DFA complement and symmetric difference, CFG predecessors and DFS back edges, dead-store elimination, SSA-style renaming, stack-machine interpretation, and arithmetic type checking.
+
+- [Programs 91–100 guide](programs/README_91_100.md)
+- [Programs 91–100 smoke tests](tests/test_programs_91_100.sh)
+
+```bash
+bash tests/test_programs_91_100.sh
+```
+
+The examples are educational, with restricted inputs. Test cases are provided but are not an exhaustive validation of compiler correctness.
