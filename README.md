@@ -37,7 +37,7 @@ Compiler-Design/
 
 See [Programs 21–50 guide](PROGRAMS_21_50.md) for example inputs and expected outputs.
 
-## Parser collection
+## Parser collections
 
 The dedicated [parsers/](parsers/) directory contains **12 implementations**.
 
