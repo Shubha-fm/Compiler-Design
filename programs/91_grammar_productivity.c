@@ -1,0 +1,3 @@
+/* Compute productive nonterminals for a fixed sample CFG. */
+#include <stdio.h>
+int main(void){const char *rhs[]={"AB","a","b","XY","x"};char lhs[]={'S','A','B','X','Y'};int productive[26]={0},change=1;while(change){change=0;for(int p=0;p<5;p++){int ok=1;for(const char *q=rhs[p];*q;q++)if(*q>='A'&&*q<='Z'&&!productive[*q-'A'])ok=0;if(ok&&!productive[lhs[p]-'A'])productive[lhs[p]-'A']=change=1;}}for(int i=0;i<5;i++)printf("%c=%d\n",lhs[i],productive[lhs[i]-'A']);return 0;}
