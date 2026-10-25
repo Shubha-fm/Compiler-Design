@@ -1,0 +1,4 @@
+/* Convert space-separated binary postfix expression to prefix form. */
+#include <stdio.h>
+#include <string.h>
+int main(void){char line[512],stack[64][512];int top=0;if(!fgets(line,sizeof line,stdin))return 1;char *token=strtok(line," \t\r\n");while(token){if(strlen(token)==1&&strchr("+-*/",token[0])){if(top<2){puts("INVALID");return 0;}char b[512],a[512];strcpy(b,stack[--top]);strcpy(a,stack[--top]);if(strlen(a)+strlen(b)+4>=512){puts("TOO LONG");return 0;}snprintf(stack[top++],512,"%s %s %s",token,a,b);}else{if(top>=64||strlen(token)>100){puts("INVALID");return 0;}strcpy(stack[top++],token);}token=strtok(NULL," \t\r\n");}puts(top==1?stack[0]:"INVALID");return 0;}
