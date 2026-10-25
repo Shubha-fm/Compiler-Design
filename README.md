@@ -1,6 +1,6 @@
 # Compiler Design Programs in C
 
-A collection of **80 numbered C programs** and **12 additional parser examples** for learning compiler construction. Topics include lexical analysis, automata, grammars, top-down and bottom-up parsing, intermediate code generation, optimization, and introductory code analysis.
+A collection of **90 numbered C programs** and **12 additional parser examples** for learning compiler construction. Topics include lexical analysis, automata, grammars, top-down and bottom-up parsing, intermediate code generation, optimization, and introductory code analysis.
 
 > **Educational scope:** Each program is a standalone example. Several use fixed grammars or demonstrate a single transformation. This repository is not a complete C compiler or a general-purpose parser-generator toolkit.
 
@@ -10,7 +10,7 @@ A collection of **80 numbered C programs** and **12 additional parser examples**
 Compiler-Design/
 ├── 01_lexical_analysis.c ... 20_dfa_binary_suffix.c   # Original programs 01–20
 ├── programs/
-│   └── 21_keyword_lookup.c ... 80_three_address_to_pseudocode.c    # Additional programs 21–80
+│   └── 21_keyword_lookup.c ... 90_basic_block_partition.c    # Additional programs 21–90
 ├── parsers/
 │   ├── top_down/                                      # Six top-down examples
 │   ├── bottom_up/                                     # Six bottom-up/chart examples
@@ -161,3 +161,23 @@ bash tests/test_programs_71_80.sh
 ```
 
 The ten smoke tests cover representative inputs, but they have not been established as an exhaustive correctness guarantee.
+
+## New programs 81–90
+
+Ten additional C11 programs extend the grammar, automata, intermediate-code, and control-flow sections:
+
+| Number | Topic |
+|---|---|
+| 81–83 | Nullable/FIRST sequence example, unit production elimination demonstration, unreachable nonterminal identification |
+| 84–85 | DFA intersection and fixed-example partition-refinement minimization |
+| 86–88 | Postfix-to-prefix conversion, TAC use/def extraction, TAC constant folding |
+| 89–90 | CFG reverse postorder and basic-block partitioning |
+
+- [Programs 81–90 documentation](programs/README_81_90.md)
+- [Programs 81–90 tests](tests/test_programs_81_90.sh)
+
+```bash
+bash tests/test_programs_81_90.sh
+```
+
+Some new examples demonstrate **fixed** grammars and automata, rather than accepting arbitrary definitions. The test cases are illustrative; they do not establish exhaustive correctness.
