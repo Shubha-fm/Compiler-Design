@@ -1,0 +1,4 @@
+/* Moore refinement for a fixed redundant 4-state DFA accepting strings ending in 1.
+   States 0 and 2 equivalent, 1 and 3 equivalent. */
+#include <stdio.h>
+int main(void){int dest[4][2]={{0,1},{2,3},{0,1},{2,3}},group[4]={0,1,0,1},next[4],changed=1;while(changed){changed=0;int count=0;for(int i=0;i<4;i++){int match=-1;for(int j=0;j<i;j++)if(group[i]==group[j]&&group[dest[i][0]]==group[dest[j][0]]&&group[dest[i][1]]==group[dest[j][1]]){match=next[j];break;}next[i]=match<0?count++:match;}for(int i=0;i<4;i++)if(group[i]!=next[i])changed=1;for(int i=0;i<4;i++)group[i]=next[i];}printf("Classes:");for(int i=0;i<4;i++)printf(" %d",group[i]);putchar('\n');return 0;}
