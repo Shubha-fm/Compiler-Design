@@ -1,0 +1,3 @@
+/* Kahn topological ordering for acyclic control-flow graphs. */
+#include <stdio.h>
+int main(void){int n,m,g[30][30]={0},deg[30]={0},q[30],h=0,t=0,order[30],k=0;if(scanf("%d%d",&n,&m)!=2||n<1||n>30||m<0||m>900)return 1;for(int i=0;i<m;i++){int a,b;if(scanf("%d%d",&a,&b)!=2||a<0||b<0||a>=n||b>=n)return 1;if(!g[a][b])g[a][b]=1,deg[b]++;}for(int i=0;i<n;i++)if(!deg[i])q[t++]=i;while(h<t){int u=q[h++];order[k++]=u;for(int v=0;v<n;v++)if(g[u][v]&&!--deg[v])q[t++]=v;}if(k!=n){puts("CYCLE");return 0;}printf("ORDER:");for(int i=0;i<n;i++)printf(" %d",order[i]);putchar('\n');return 0;}
