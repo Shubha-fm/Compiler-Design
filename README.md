@@ -1,6 +1,6 @@
 # Compiler Design Programs in C
 
-A collection of **100 numbered C programs** and **12 additional parser examples** for learning compiler construction. Topics include lexical analysis, automata, grammars, top-down and bottom-up parsing, intermediate code generation, optimization, and introductory code analysis.
+A collection of **110 numbered C programs** and **12 additional parser examples** for learning compiler construction. Topics include lexical analysis, automata, grammars, top-down and bottom-up parsing, intermediate code generation, optimization, and introductory code analysis.
 
 > **Educational scope:** Each program is a standalone example. Several use fixed grammars or demonstrate a single transformation. This repository is not a complete C compiler or a general-purpose parser-generator toolkit.
 
@@ -10,7 +10,7 @@ A collection of **100 numbered C programs** and **12 additional parser examples*
 Compiler-Design/
 ├── 01_lexical_analysis.c ... 20_dfa_binary_suffix.c   # Original programs 01–20
 ├── programs/
-│   └── 21_keyword_lookup.c ... 100_expression_type_checker.c    # Additional programs 21–100
+│   └── 21_keyword_lookup.c ... 110_three_address_code_validator.c    # Additional programs 21–110
 ├── parsers/
 │   ├── top_down/                                      # Six top-down examples
 │   ├── bottom_up/                                     # Six bottom-up/chart examples
@@ -194,3 +194,22 @@ bash tests/test_programs_91_100.sh
 ```
 
 The examples are educational, with restricted inputs. Test cases are provided but are not an exhaustive validation of compiler correctness.
+
+## New programs 101–110
+
+Ten additional C11 examples focus on source analysis, diagnostics, automata, intermediate code, and control-flow analysis.
+
+| Numbers | Topics |
+|---|---|
+| 101–104 | Edit distance for diagnostic hints, literal suffixes, UTF-8 structure, direct left recursion |
+| 105–107 | DFA execution trace, constant comparison folding, stack-depth analysis |
+| 108–110 | CFG topological ordering, interference edges, and TAC validation |
+
+- [Programs 101–110 documentation](programs/README_101_110.md)
+- [Programs 101–110 test script](tests/test_programs_101_110.sh)
+
+```bash
+bash tests/test_programs_101_110.sh
+```
+
+All ten are educational examples with restricted input formats. The smoke tests are representative only.
