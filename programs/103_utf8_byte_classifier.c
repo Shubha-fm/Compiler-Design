@@ -1,0 +1,3 @@
+/* Classify lead bytes; checks continuation-byte structure, not full Unicode validity. */
+#include <stdio.h>
+int main(void){unsigned char s[512];if(!fgets((char*)s,sizeof s,stdin))return 1;int count=0;for(int i=0;s[i]&&s[i]!='\n';){int n=(s[i]<128)?1:(s[i]>=0xC2&&s[i]<=0xDF)?2:(s[i]>=0xE0&&s[i]<=0xEF)?3:(s[i]>=0xF0&&s[i]<=0xF4)?4:0;if(!n){puts("INVALID");return 0;}for(int k=1;k<n;k++)if(!s[i+k]||(s[i+k]&0xC0)!=0x80){puts("INVALID");return 0;}i+=n;count++;}printf("codepoints=%d\n",count);return 0;}
