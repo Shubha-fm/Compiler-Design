@@ -1,0 +1,4 @@
+/* Natural loop of a supplied back edge tail->header in CFG.
+   Assumes header dominates tail; computes reverse predecessor closure. */
+#include <stdio.h>
+int main(void){int n,m,tail,head,edge[30][30]={0},inside[30]={0},stack[30],top=0;if(scanf("%d%d",&n,&m)!=2||n<1||n>30||m<0||m>900)return 1;for(int i=0;i<m;i++){int u,v;if(scanf("%d%d",&u,&v)!=2||u<0||u>=n||v<0||v>=n)return 1;edge[u][v]=1;}if(scanf("%d%d",&tail,&head)!=2||tail<0||tail>=n||head<0||head>=n||!edge[tail][head])return 1;inside[head]=inside[tail]=1;if(tail!=head)stack[top++]=tail;while(top){int x=stack[--top];for(int p=0;p<n;p++)if(edge[p][x]&&!inside[p]){inside[p]=1;if(p!=head)stack[top++]=p;}}printf("loop:");for(int i=0;i<n;i++)if(inside[i])printf(" %d",i);putchar('\n');return 0;}
