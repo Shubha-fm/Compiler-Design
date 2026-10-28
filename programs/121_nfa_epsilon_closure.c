@@ -1,0 +1,3 @@
+/* Epsilon closure for a directed epsilon-transition graph, vertices 0..n-1. */
+#include <stdio.h>
+int main(void){int n,m,start,a[32][32]={0},seen[32]={0},q[32],h=0,t=0;if(scanf("%d%d%d",&n,&m,&start)!=3||n<1||n>32||m<0||m>1024||start<0||start>=n)return 1;for(int i=0;i<m;i++){int x,y;if(scanf("%d%d",&x,&y)!=2||x<0||x>=n||y<0||y>=n)return 1;a[x][y]=1;}q[t++]=start;seen[start]=1;while(h<t){int x=q[h++];for(int y=0;y<n;y++)if(a[x][y]&&!seen[y])seen[y]=1,q[t++]=y;}printf("closure:");for(int i=0;i<n;i++)if(seen[i])printf(" %d",i);putchar('\n');return 0;}
