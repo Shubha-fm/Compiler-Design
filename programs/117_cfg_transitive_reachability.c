@@ -1,0 +1,3 @@
+/* Warshall transitive reachability matrix for a small control-flow graph. */
+#include <stdio.h>
+int main(void){int n,m,r[20][20]={0};if(scanf("%d %d",&n,&m)!=2||n<1||n>20||m<0||m>400)return 1;for(int i=0;i<n;i++)r[i][i]=1;for(int i=0;i<m;i++){int a,b;if(scanf("%d %d",&a,&b)!=2||a<0||b<0||a>=n||b>=n)return 1;r[a][b]=1;}for(int k=0;k<n;k++)for(int i=0;i<n;i++)for(int j=0;j<n;j++)r[i][j]|=r[i][k]&&r[k][j];for(int i=0;i<n;i++){for(int j=0;j<n;j++)printf("%d%s",r[i][j],j+1==n?"":" ");putchar('\n');}return 0;}
