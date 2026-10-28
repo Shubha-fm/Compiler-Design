@@ -1,0 +1,4 @@
+/* BFS shortest accepted binary word for DFA, bounded to 20 states. */
+#include <stdio.h>
+#include <string.h>
+int main(void){int n,start,accept[20],next[20][2],seen[20]={0},parent[20],letter[20],q[20],h=0,t=0;if(scanf("%d%d",&n,&start)!=2||n<1||n>20||start<0||start>=n)return 1;for(int i=0;i<n;i++)if(scanf("%d",&accept[i])!=1||(accept[i]!=0&&accept[i]!=1))return 1;for(int i=0;i<n;i++)for(int c=0;c<2;c++)if(scanf("%d",&next[i][c])!=1||next[i][c]<0||next[i][c]>=n)return 1;seen[start]=1;parent[start]=-1;q[t++]=start;while(h<t){int x=q[h++];if(accept[x]){char word[21];int k=0;while(parent[x]>=0){word[k++]=(char)('0'+letter[x]);x=parent[x];}printf("word:");if(!k)printf(" epsilon");while(k)printf("%c",word[--k]);putchar('\n');return 0;}for(int c=0;c<2;c++){int y=next[x][c];if(!seen[y]){seen[y]=1;parent[y]=x;letter[y]=c;q[t++]=y;}}}puts("EMPTY LANGUAGE");return 0;}
