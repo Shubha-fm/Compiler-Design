@@ -1,0 +1,3 @@
+/* Estimate maximum simultaneously live variable count from time intervals. */
+#include <stdio.h>
+int main(void){int n,start[100],end[100],peak=0;if(scanf("%d",&n)!=1||n<0||n>100)return 1;for(int i=0;i<n;i++)if(scanf("%d %d",&start[i],&end[i])!=2||start[i]<0||end[i]<start[i]||end[i]>10000)return 1;for(int t=0;t<=10000;t++){int live=0;for(int i=0;i<n;i++)if(start[i]<=t&&t<end[i])live++;if(live>peak)peak=live;}printf("pressure=%d\n",peak);return 0;}
