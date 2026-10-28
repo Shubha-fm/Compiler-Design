@@ -1,0 +1,4 @@
+/* Compare two complete binary DFAs by BFS on their product. Input: n1 n2,
+ final flags, then each state's transitions for 0 and 1, then starts. */
+#include <stdio.h>
+int main(void){int n,m,f[16],g[16],a[16][2],b[16][2],s,t,seen[16][16]={0},q[256][2],h=0,z=0;if(scanf("%d%d",&n,&m)!=2||n<1||n>16||m<1||m>16)return 1;for(int i=0;i<n;i++)if(scanf("%d",&f[i])!=1||(f[i]!=0&&f[i]!=1))return 1;for(int i=0;i<m;i++)if(scanf("%d",&g[i])!=1||(g[i]!=0&&g[i]!=1))return 1;for(int i=0;i<n;i++)for(int c=0;c<2;c++)if(scanf("%d",&a[i][c])!=1||a[i][c]<0||a[i][c]>=n)return 1;for(int i=0;i<m;i++)for(int c=0;c<2;c++)if(scanf("%d",&b[i][c])!=1||b[i][c]<0||b[i][c]>=m)return 1;if(scanf("%d%d",&s,&t)!=2||s<0||s>=n||t<0||t>=m)return 1;q[z][0]=s;q[z++][1]=t;seen[s][t]=1;while(h<z){int x=q[h][0],y=q[h++][1];if(f[x]!=g[y]){puts("DIFFERENT");return 0;}for(int c=0;c<2;c++){int u=a[x][c],v=b[y][c];if(!seen[u][v])seen[u][v]=1,q[z][0]=u,q[z++][1]=v;}}puts("EQUIVALENT");return 0;}
