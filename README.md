@@ -1,6 +1,6 @@
 # Compiler Design Programs in C
 
-A collection of **110 numbered C programs** and **12 additional parser examples** for learning compiler construction. Topics include lexical analysis, automata, grammars, top-down and bottom-up parsing, intermediate code generation, optimization, and introductory code analysis.
+A collection of **120 numbered C programs** and **12 additional parser examples** for learning compiler construction. Topics include lexical analysis, automata, grammars, top-down and bottom-up parsing, intermediate code generation, optimization, and introductory code analysis.
 
 > **Educational scope:** Each program is a standalone example. Several use fixed grammars or demonstrate a single transformation. This repository is not a complete C compiler or a general-purpose parser-generator toolkit.
 
@@ -10,7 +10,7 @@ A collection of **110 numbered C programs** and **12 additional parser examples*
 Compiler-Design/
 ├── 01_lexical_analysis.c ... 20_dfa_binary_suffix.c   # Original programs 01–20
 ├── programs/
-│   └── 21_keyword_lookup.c ... 110_three_address_code_validator.c    # Additional programs 21–110
+│   └── 21_keyword_lookup.c ... 120_register_pressure_estimate.c    # Additional programs 21–120
 ├── parsers/
 │   ├── top_down/                                      # Six top-down examples
 │   ├── bottom_up/                                     # Six bottom-up/chart examples
@@ -213,3 +213,16 @@ bash tests/test_programs_101_110.sh
 ```
 
 All ten are educational examples with restricted input formats. The smoke tests are representative only.
+
+## New programs 111–120
+
+Ten additional C11 examples cover source-location tracking, operator recognition, postfix-regex validation, LL(1) FIRST-set conflict checks, parse-tree notation, interval analysis, graph reachability, strongly connected components, three-address swaps, and register pressure.
+
+- [Programs 111–120 guide](programs/README_111_120.md)
+- [Programs 111–120 test script](tests/test_programs_111_120.sh)
+
+```bash
+bash tests/test_programs_111_120.sh
+```
+
+These are focused teaching examples. Tests are illustrative rather than exhaustive.
