@@ -1,0 +1,3 @@
+/* Straight-line constant environment for assignments: x literal, or x @ y. */
+#include <stdio.h>
+int main(void){int n,known[26]={0};long val[26];if(scanf("%d",&n)!=1||n<0||n>100)return 1;for(int i=0;i<n;i++){char dst,kind;if(scanf(" %c %c",&dst,&kind)!=2||dst<'a'||dst>'z')return 1;int d=dst-'a';if(kind=='#'){long v;if(scanf("%ld",&v)!=1)return 1;known[d]=1;val[d]=v;}else if(kind=='@'){char src;if(scanf(" %c",&src)!=1||src<'a'||src>'z')return 1;known[d]=known[src-'a'];if(known[d])val[d]=val[src-'a'];}else return 1;}for(int i=0;i<26;i++)if(known[i])printf("%c=%ld\n",'a'+i,val[i]);return 0;}
