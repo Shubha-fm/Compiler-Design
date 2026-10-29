@@ -1,0 +1,3 @@
+/* Count zero-indegree entry nodes and zero-outdegree exit nodes of a CFG. */
+#include <stdio.h>
+int main(void){int n,m,in[50]={0},out[50]={0},edge[50][50]={0};if(scanf("%d %d",&n,&m)!=2||n<1||n>50||m<0||m>2500)return 1;for(int i=0;i<m;i++){int u,v;if(scanf("%d %d",&u,&v)!=2||u<0||u>=n||v<0||v>=n)return 1;if(!edge[u][v]){edge[u][v]=1;out[u]++;in[v]++;}}int entries=0,exits=0;for(int i=0;i<n;i++){entries+=in[i]==0;exits+=out[i]==0;}printf("entries=%d exits=%d\n",entries,exits);return 0;}
