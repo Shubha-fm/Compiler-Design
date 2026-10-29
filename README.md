@@ -1,6 +1,6 @@
 # Compiler Design Programs in C
 
-A collection of **130 numbered C programs** and **12 additional parser examples** for learning compiler construction. Topics include lexical analysis, automata, grammars, top-down and bottom-up parsing, intermediate code generation, optimization, and introductory code analysis.
+A collection of **140 numbered C programs** and **12 additional parser examples** for learning compiler construction. Topics include lexical analysis, automata, grammars, top-down and bottom-up parsing, intermediate code generation, optimization, and introductory code analysis.
 
 > **Educational scope:** Each program is a standalone example. Several use fixed grammars or demonstrate a single transformation. This repository is not a complete C compiler or a general-purpose parser-generator toolkit.
 
@@ -10,7 +10,7 @@ A collection of **130 numbered C programs** and **12 additional parser examples*
 Compiler-Design/
 ├── 01_lexical_analysis.c ... 20_dfa_binary_suffix.c   # Original programs 01–20
 ├── programs/
-│   └── 21_keyword_lookup.c ... 130_intermediate_code_label_resolution.c    # Additional programs 21–130
+│   └── 21_keyword_lookup.c ... 140_three_address_constant_substitution.c    # Additional programs 21–140
 ├── parsers/
 │   ├── top_down/                                      # Six top-down examples
 │   ├── bottom_up/                                     # Six bottom-up/chart examples
@@ -239,3 +239,16 @@ bash tests/test_programs_121_130.sh
 ```
 
 The C/C++ CI workflow was intentionally removed and has not been restored. Tests run manually. These examples are educational and use bounded input formats.
+
+## New programs 131–140
+
+Ten additional C11 examples cover token-class compression, identifier patterns, DFA distinguishing words, CNF production checks, LL(1) stack tracing, postfix stack usage, CFG entry/exit analysis, duplicate IR labels, bit-vector data flow, and constant substitution.
+
+- [Programs 131–140 documentation](programs/README_131_140.md)
+- [Programs 131–140 sample tests](tests/test_programs_131_140.sh)
+
+```bash
+bash tests/test_programs_131_140.sh
+```
+
+The removed C/C++ GitHub Actions workflow has not been restored. Run the tests manually. Example programs use restricted grammars and input sizes.
