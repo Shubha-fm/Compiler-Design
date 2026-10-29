@@ -1,0 +1,3 @@
+/* Trace LL(1) stack operations for grammar S -> aS | b. */
+#include <stdio.h>
+int main(void){char input[256],stack[512];int top=0,pos=0;if(scanf("%255s",input)!=1)return 1;stack[top++]='$';stack[top++]='S';for(int steps=0;steps<1000&&top;steps++){char x=stack[--top],c=input[pos]?input[pos]:'$';if(x=='S'){if(c=='a'){puts("S -> aS");stack[top++]='S';stack[top++]='a';}else if(c=='b'){puts("S -> b");stack[top++]='b';}else{puts("REJECT");return 0;}}else if(x==c){if(x!='$'){printf("match %c\n",c);pos++;}}else{puts("REJECT");return 0;}}puts(!top&&!input[pos]?"ACCEPT":"REJECT");return 0;}
