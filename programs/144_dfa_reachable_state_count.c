@@ -1,0 +1,3 @@
+/* BFS reachable states from state zero in a binary DFA. */
+#include <stdio.h>
+int main(void){int n,a[64][2],v[64]={0},q[64],h=0,t=0;if(scanf("%d",&n)!=1||n<1||n>64)return 1;for(int i=0;i<n;i++)for(int c=0;c<2;c++)if(scanf("%d",&a[i][c])!=1||a[i][c]<0||a[i][c]>=n)return 1;q[t++]=0;v[0]=1;while(h<t){int x=q[h++];for(int c=0;c<2;c++){int y=a[x][c];if(!v[y])v[y]=1,q[t++]=y;}}printf("reachable=%d\n",t);return 0;}
