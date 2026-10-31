@@ -1,0 +1,3 @@
+/* Detect indirect left recursion in a grammar of single nonterminal transitions. */
+#include <stdio.h>
+int main(void){int n,m,a[26][26]={0};if(scanf("%d",&n)!=1||n<1||n>26)return 1;if(scanf("%d",&m)!=1||m<0||m>676)return 1;for(int i=0;i<m;i++){char u,v;if(scanf(" %c %c",&u,&v)!=2||u<'A'||u>='A'+n||v<'A'||v>='A'+n)return 1;a[u-'A'][v-'A']=1;}for(int k=0;k<n;k++)for(int i=0;i<n;i++)for(int j=0;j<n;j++)a[i][j]|=a[i][k]&&a[k][j];for(int i=0;i<n;i++)if(a[i][i]){printf("LEFT RECURSION %c\n",'A'+i);return 0;}puts("NO LEFT RECURSION");return 0;}
