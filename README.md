@@ -1,6 +1,6 @@
 # Compiler Design Programs in C
 
-A collection of **140 numbered C programs** and **12 additional parser examples** for learning compiler construction. Topics include lexical analysis, automata, grammars, top-down and bottom-up parsing, intermediate code generation, optimization, and introductory code analysis.
+A collection of **150 numbered C programs** and **12 additional parser examples** for learning compiler construction. Topics include lexical analysis, automata, grammars, top-down and bottom-up parsing, intermediate code generation, optimization, and introductory code analysis.
 
 > **Educational scope:** Each program is a standalone example. Several use fixed grammars or demonstrate a single transformation. This repository is not a complete C compiler or a general-purpose parser-generator toolkit.
 
@@ -10,7 +10,7 @@ A collection of **140 numbered C programs** and **12 additional parser examples*
 Compiler-Design/
 ├── 01_lexical_analysis.c ... 20_dfa_binary_suffix.c   # Original programs 01–20
 ├── programs/
-│   └── 21_keyword_lookup.c ... 140_three_address_constant_substitution.c    # Additional programs 21–140
+│   └── 21_keyword_lookup.c ... 150_type_conversion_rules.c    # Additional programs 21–150
 ├── parsers/
 │   ├── top_down/                                      # Six top-down examples
 │   ├── bottom_up/                                     # Six bottom-up/chart examples
@@ -252,3 +252,16 @@ bash tests/test_programs_131_140.sh
 ```
 
 The removed C/C++ GitHub Actions workflow has not been restored. Run the tests manually. Example programs use restricted grammars and input sizes.
+
+## New programs 141–150
+
+Ten additional C11 examples cover numeric literal bases, regex character ranges, indirect left-recursion cycles, DFA reachable states, postfix expression statistics, immediate dominators, constant branches, live interval interference, IR instruction counting, and arithmetic type conversion.
+
+- [Programs 141–150 documentation](programs/README_141_150.md)
+- [Programs 141–150 smoke tests](tests/test_programs_141_150.sh)
+
+```bash
+bash tests/test_programs_141_150.sh
+```
+
+These are restricted educational examples; the provided smoke tests are not exhaustive. The previously removed C/C++ CI workflow remains absent.
