@@ -1,6 +1,6 @@
 # Compiler Design Programs in C
 
-A collection of **150 numbered C programs** and **12 additional parser examples** for learning compiler construction. Topics include lexical analysis, automata, grammars, top-down and bottom-up parsing, intermediate code generation, optimization, and introductory code analysis.
+A collection of **160 numbered C programs** and **12 additional parser examples** for learning compiler construction. Topics include lexical analysis, automata, grammars, top-down and bottom-up parsing, intermediate code generation, optimization, and introductory code analysis.
 
 > **Educational scope:** Each program is a standalone example. Several use fixed grammars or demonstrate a single transformation. This repository is not a complete C compiler or a general-purpose parser-generator toolkit.
 
@@ -10,7 +10,7 @@ A collection of **150 numbered C programs** and **12 additional parser examples*
 Compiler-Design/
 ├── 01_lexical_analysis.c ... 20_dfa_binary_suffix.c   # Original programs 01–20
 ├── programs/
-│   └── 21_keyword_lookup.c ... 150_type_conversion_rules.c    # Additional programs 21–150
+│   └── 21_keyword_lookup.c ... 160_stack_instruction_validation.c    # Additional programs 21–160
 ├── parsers/
 │   ├── top_down/                                      # Six top-down examples
 │   ├── bottom_up/                                     # Six bottom-up/chart examples
@@ -265,3 +265,16 @@ bash tests/test_programs_141_150.sh
 ```
 
 These are restricted educational examples; the provided smoke tests are not exhaustive. The previously removed C/C++ CI workflow remains absent.
+
+## New programs 151–160
+
+Ten additional C11 examples cover DFA emptiness and language finiteness, prefix-expression validation, useless grammar symbols (fixed demonstration), CFG edge classification, TAC quadruples, live intervals, SSA phi nodes, newline normalization, and stack bytecode validation.
+
+- [Programs 151–160 documentation](programs/README_151_160.md)
+- [Programs 151–160 smoke tests](tests/test_programs_151_160.sh)
+
+```bash
+bash tests/test_programs_151_160.sh
+```
+
+These are bounded teaching examples. The smoke tests are representative, not exhaustive. C/C++ GitHub Actions CI remains removed.
