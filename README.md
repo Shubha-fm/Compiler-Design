@@ -1,6 +1,6 @@
 # Compiler Design Programs in C
 
-A collection of **160 numbered C programs** and **12 additional parser examples** for learning compiler construction. Topics include lexical analysis, automata, grammars, top-down and bottom-up parsing, intermediate code generation, optimization, and introductory code analysis.
+A collection of **170 numbered C programs** and **12 additional parser examples** for learning compiler construction. Topics include lexical analysis, automata, grammars, top-down and bottom-up parsing, intermediate code generation, optimization, and introductory code analysis.
 
 > **Educational scope:** Each program is a standalone example. Several use fixed grammars or demonstrate a single transformation. This repository is not a complete C compiler or a general-purpose parser-generator toolkit.
 
@@ -10,7 +10,7 @@ A collection of **160 numbered C programs** and **12 additional parser examples*
 Compiler-Design/
 ├── 01_lexical_analysis.c ... 20_dfa_binary_suffix.c   # Original programs 01–20
 ├── programs/
-│   └── 21_keyword_lookup.c ... 160_stack_instruction_validation.c    # Additional programs 21–160
+│   └── 21_keyword_lookup.c ... 170_stack_bytecode_trace.c    # Additional programs 21–170
 ├── parsers/
 │   ├── top_down/                                      # Six top-down examples
 │   ├── bottom_up/                                     # Six bottom-up/chart examples
@@ -278,3 +278,16 @@ bash tests/test_programs_151_160.sh
 ```
 
 These are bounded teaching examples. The smoke tests are representative, not exhaustive. C/C++ GitHub Actions CI remains removed.
+
+## New programs 161–170
+
+The latest ten C11 exercises cover lexical token classification, unit-production transitive closure, post-dominators, DFA transition coverage, lexical scope lookup, row-major array offsets, register pressure/spill estimates, critical CFG edges, basic TAC code generation, and stack bytecode tracing.
+
+- [Programs 161–170 catalog and examples](programs/README_161_170.md)
+- [Programs 161–170 tests](tests/test_programs_161_170.sh)
+
+```bash
+bash tests/test_programs_161_170.sh
+```
+
+The tests require GCC and Bash and are illustrative; the removed C/C++ CI workflow is not restored.
