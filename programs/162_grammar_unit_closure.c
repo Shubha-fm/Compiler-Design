@@ -1,0 +1,3 @@
+/* Transitive closure of unit productions A->B; nonterminals A.. . */
+#include <stdio.h>
+int main(void){int n,m,g[26][26]={0};if(scanf("%d%d",&n,&m)!=2||n<1||n>26||m<0||m>676)return 1;for(int i=0;i<m;i++){char a,b;if(scanf(" %c %c",&a,&b)!=2||a<'A'||a>='A'+n||b<'A'||b>='A'+n)return 1;g[a-'A'][b-'A']=1;}for(int i=0;i<n;i++)g[i][i]=1;for(int k=0;k<n;k++)for(int i=0;i<n;i++)for(int j=0;j<n;j++)g[i][j]|=g[i][k]&&g[k][j];for(int i=0;i<n;i++){printf("%c:",i+'A');for(int j=0;j<n;j++)if(g[i][j])printf(" %c",j+'A');putchar('\n');}return 0;}
