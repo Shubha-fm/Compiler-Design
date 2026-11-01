@@ -1,0 +1,3 @@
+/* Critical edges: source has >1 successors and destination >1 predecessors. */
+#include <stdio.h>
+int main(void){int n,m,g[40][40]={0},in[40]={0},out[40]={0};if(scanf("%d%d",&n,&m)!=2||n<1||n>40||m<0||m>1600)return 1;for(int i=0;i<m;i++){int a,b;if(scanf("%d%d",&a,&b)!=2||a<0||a>=n||b<0||b>=n)return 1;if(!g[a][b])g[a][b]=1,out[a]++,in[b]++;}for(int i=0;i<n;i++)for(int j=0;j<n;j++)if(g[i][j]&&out[i]>1&&in[j]>1)printf("critical %d %d\n",i,j);return 0;}
