@@ -1,0 +1,3 @@
+/* Determine whether any accepting state is reachable in a complete binary DFA. */
+#include <stdio.h>
+int main(void){int n,start,final[40],edge[40][2],seen[40]={0},q[40],h=0,t=0;if(scanf("%d%d",&n,&start)!=2||n<1||n>40||start<0||start>=n)return 1;for(int i=0;i<n;i++)if(scanf("%d",&final[i])!=1||(final[i]!=0&&final[i]!=1))return 1;for(int i=0;i<n;i++)for(int j=0;j<2;j++)if(scanf("%d",&edge[i][j])!=1||edge[i][j]<0||edge[i][j]>=n)return 1;seen[start]=1;q[t++]=start;while(h<t){int x=q[h++];if(final[x]){puts("NONEMPTY");return 0;}for(int j=0;j<2;j++){int y=edge[x][j];if(!seen[y])seen[y]=1,q[t++]=y;}}puts("EMPTY");return 0;}
