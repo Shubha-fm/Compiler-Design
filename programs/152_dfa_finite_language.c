@@ -1,0 +1,3 @@
+/* DFA language is infinite if a reachable cycle can reach an accepting state. */
+#include <stdio.h>
+int main(void){int n,s,f[32],e[32][2],reach[32][32]={0};if(scanf("%d%d",&n,&s)!=2||n<1||n>32||s<0||s>=n)return 1;for(int i=0;i<n;i++)if(scanf("%d",&f[i])!=1||(f[i]!=0&&f[i]!=1))return 1;for(int i=0;i<n;i++)for(int j=0;j<2;j++){if(scanf("%d",&e[i][j])!=1||e[i][j]<0||e[i][j]>=n)return 1;reach[i][e[i][j]]=1;}for(int k=0;k<n;k++)for(int i=0;i<n;i++)for(int j=0;j<n;j++)reach[i][j]|=reach[i][k]&&reach[k][j];for(int i=0;i<n;i++)if((i==s||reach[s][i])&&reach[i][i])for(int j=0;j<n;j++)if(f[j]&&(i==j||reach[i][j])){puts("INFINITE");return 0;}puts("FINITE");return 0;}
