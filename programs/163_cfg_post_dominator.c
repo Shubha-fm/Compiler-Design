@@ -1,0 +1,5 @@
+/* Post-dominators for a CFG with a designated reachable exit; max 30 nodes.
+   Assumes every node reaches that exit. */
+#include <stdio.h>
+#include <stdint.h>
+int main(void){int n,m,exit,g[30][30]={0};uint32_t pd[30];if(scanf("%d%d%d",&n,&m,&exit)!=3||n<1||n>30||exit<0||exit>=n||m<0||m>900)return 1;for(int i=0;i<m;i++){int u,v;if(scanf("%d%d",&u,&v)!=2||u<0||u>=n||v<0||v>=n)return 1;g[u][v]=1;}uint32_t all=(1u<<n)-1u;for(int i=0;i<n;i++)pd[i]=i==exit?(1u<<i):all;int change=1;while(change){change=0;for(int i=0;i<n;i++)if(i!=exit){uint32_t value=all;int count=0;for(int j=0;j<n;j++)if(g[i][j]){value&=pd[j];count++;}if(!count)return 1;value|=1u<<i;if(value!=pd[i])pd[i]=value,change=1;}}for(int i=0;i<n;i++){printf("%d:",i);for(int j=0;j<n;j++)if(pd[i]&(1u<<j))printf(" %d",j);putchar('\n');}return 0;}
