@@ -1,0 +1,3 @@
+/* Count unique transitions exercised by binary DFA input from start state. */
+#include <stdio.h>
+int main(void){int n,start,t[32][2],used[32][2]={0};char word[512];if(scanf("%d%d",&n,&start)!=2||n<1||n>32||start<0||start>=n)return 1;for(int i=0;i<n;i++)for(int c=0;c<2;c++)if(scanf("%d",&t[i][c])!=1||t[i][c]<0||t[i][c]>=n)return 1;if(scanf("%511s",word)!=1)return 1;int state=start,count=0;for(int i=0;word[i];i++){if(word[i]!='0'&&word[i]!='1')return 1;int c=word[i]-'0';if(!used[state][c])used[state][c]=1,count++;state=t[state][c];}printf("covered=%d\n",count);return 0;}
