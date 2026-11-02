@@ -1,0 +1,3 @@
+/* Plan splitting of critical CFG edges: outdegree(src)>1 and indegree(dst)>1. */
+#include <stdio.h>
+int main(void){int n,m,g[40][40]={0},in[40]={0},out[40]={0},k=0;if(scanf("%d%d",&n,&m)!=2||n<1||n>40||m<0||m>1600)return 1;for(int i=0;i<m;i++){int u,v;if(scanf("%d%d",&u,&v)!=2||u<0||v<0||u>=n||v>=n)return 1;if(!g[u][v])g[u][v]=1,out[u]++,in[v]++;}for(int i=0;i<n;i++)for(int j=0;j<n;j++)if(g[i][j]&&out[i]>1&&in[j]>1)printf("split %d->new%d->%d\n",i,n+k++,j);printf("splits=%d\n",k);return 0;}
