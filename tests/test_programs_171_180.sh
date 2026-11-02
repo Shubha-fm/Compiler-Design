@@ -18,7 +18,7 @@ check '171_lexer_comment_counter' 'int x; // hi
 check '172_dfa_shortest_rejecting_word' '2 0
 1 0
 0 1
-1 1' 'reject:0'
+1 1' 'reject:1'
 check '173_grammar_first_sequence' '2 A ab 1 B c 0 AB' 'FIRST: a b c'
 check '174_cfg_bridge_detection' '3 2
 0 1
