@@ -1,0 +1,4 @@
+/* Greedy interval allocation (half-open [start,end)), sorted by start.
+   Reports register or spill; handles up to 32 intervals and 16 registers. */
+#include <stdio.h>
+int main(void){int n,r,s[32],e[32],owner[16],end[16];if(scanf("%d%d",&n,&r)!=2||n<0||n>32||r<1||r>16)return 1;for(int i=0;i<r;i++)owner[i]=-1,end[i]=-1;for(int i=0;i<n;i++)if(scanf("%d%d",&s[i],&e[i])!=2||s[i]<0||e[i]<=s[i]||(i&&s[i]<s[i-1]))return 1;for(int i=0;i<n;i++){int reg=-1;for(int j=0;j<r;j++)if(owner[j]<0||end[j]<=s[i]){reg=j;break;}if(reg<0)printf("v%d spill\n",i);else{owner[reg]=i;end[reg]=e[i];printf("v%d R%d\n",i,reg);}}return 0;}
