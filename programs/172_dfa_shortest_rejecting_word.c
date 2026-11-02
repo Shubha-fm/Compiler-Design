@@ -1,0 +1,3 @@
+/* BFS shortest rejected binary word of a complete DFA (epsilon allowed). */
+#include <stdio.h>
+int main(void){int n,s,f[32],next[32][2],q[32],par[32],sym[32],seen[32]={0},h=0,t=0;if(scanf("%d%d",&n,&s)!=2||n<1||n>32||s<0||s>=n)return 1;for(int i=0;i<n;i++)if(scanf("%d",&f[i])!=1||(f[i]!=0&&f[i]!=1))return 1;for(int i=0;i<n;i++)for(int c=0;c<2;c++)if(scanf("%d",&next[i][c])!=1||next[i][c]<0||next[i][c]>=n)return 1;seen[s]=1;par[s]=-1;q[t++]=s;while(h<t){int u=q[h++];if(!f[u]){char a[33];int k=0;for(int x=u;par[x]>=0;x=par[x])a[k++]=(char)('0'+sym[x]);printf("reject:");if(!k)printf(" epsilon");while(k)putchar(a[--k]);putchar('\n');return 0;}for(int c=0;c<2;c++){int v=next[u][c];if(!seen[v]){seen[v]=1;par[v]=u;sym[v]=c;q[t++]=v;}}}puts("UNIVERSAL");return 0;}
