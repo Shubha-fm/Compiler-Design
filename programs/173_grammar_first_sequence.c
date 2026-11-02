@@ -1,0 +1,5 @@
+/* FIRST of a sequence where each symbol's FIRST set and nullable flag are supplied.
+   Symbols A..Z; terminal sets as lowercase words, '-' means empty set. */
+#include <stdio.h>
+#include <string.h>
+int main(void){int n,nullable[26]={0},set[26][26]={{0}};char nt,word[64],seq[64];if(scanf("%d",&n)!=1||n<1||n>26)return 1;for(int i=0;i<n;i++){int yes;if(scanf(" %c %63s %d",&nt,word,&yes)!=3||nt<'A'||nt>'Z'||yes<0||yes>1)return 1;nullable[nt-'A']=yes;for(int j=0;word[j];j++){if(word[j]=='-'&&j==0&&!word[1])break;if(word[j]<'a'||word[j]>'z')return 1;set[nt-'A'][word[j]-'a']=1;}}if(scanf("%63s",seq)!=1)return 1;int result[26]={0},all=1;for(int i=0;seq[i];i++){if(seq[i]<'A'||seq[i]>'Z')return 1;int x=seq[i]-'A';for(int j=0;j<26;j++)result[j]|=set[x][j];if(!nullable[x]){all=0;break;}}printf("FIRST:");for(int j=0;j<26;j++)if(result[j])printf(" %c",'a'+j);if(all)printf(" epsilon");putchar('\n');return 0;}
