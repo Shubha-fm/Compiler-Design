@@ -1,0 +1,4 @@
+/* Compute McCabe complexity E - N + 2P of an undirected underlying graph.
+   P is the number of connected components, including isolated nodes. */
+#include <stdio.h>
+int main(void){int n,m,g[64][64]={0},seen[64]={0},q[64],edges=0,components=0;if(scanf("%d%d",&n,&m)!=2||n<1||n>64||m<0||m>4096)return 1;for(int i=0;i<m;i++){int a,b;if(scanf("%d%d",&a,&b)!=2||a<0||b<0||a>=n||b>=n)return 1;if(!g[a][b]){g[a][b]=1;edges++;}g[b][a]=1;}for(int i=0;i<n;i++)if(!seen[i]){int head=0,tail=0;components++;q[tail++]=i;seen[i]=1;while(head<tail){int u=q[head++];for(int v=0;v<n;v++)if(g[u][v]&&!seen[v])seen[v]=1,q[tail++]=v;}}printf("complexity=%d components=%d\n",edges-n+2*components,components);return 0;}
