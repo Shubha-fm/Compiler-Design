@@ -1,0 +1,3 @@
+/* Find unreachable CFG blocks from entry 0 using BFS. */
+#include <stdio.h>
+int main(void){int n,m,g[40][40]={0},vis[40]={0},q[40],h=0,t=0;if(scanf("%d%d",&n,&m)!=2||n<1||n>40||m<0||m>1600)return 1;for(int i=0;i<m;i++){int x,y;if(scanf("%d%d",&x,&y)!=2||x<0||y<0||x>=n||y>=n)return 1;g[x][y]=1;}vis[0]=1;q[t++]=0;while(h<t){int x=q[h++];for(int y=0;y<n;y++)if(g[x][y]&&!vis[y])vis[y]=1,q[t++]=y;}printf("unreachable:");for(int i=0;i<n;i++)if(!vis[i])printf(" %d",i);putchar('\n');return 0;}
