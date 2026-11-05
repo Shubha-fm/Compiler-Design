@@ -19,7 +19,7 @@ check '193_nfa_move_set' '3 2
 0 a 1
 1 a 2
 2 0 1
-a' 'MOVE: 2'
+a' 'MOVE: 1 2'
 check '194_grammar_follow_trailer' 'ab 1 cd' 'FOLLOW_B: a b c d'
 check '195_cfg_dominance_frontier' '4 4
 0 1
