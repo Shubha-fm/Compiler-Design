@@ -1,0 +1,5 @@
+/* Simulate a small epsilon-free NFA over {a,b}.
+Input n m start final_count finals...; then m edges: from symbol to; then word. */
+#include <stdio.h>
+#include <string.h>
+int main(void){int n,m,start,k,fin[32]={0},edge[32][2][32]={0},cur[32]={0},next[32];char word[256],ch;if(scanf("%d%d%d%d",&n,&m,&start,&k)!=4||n<1||n>32||m<0||m>2048||start<0||start>=n||k<0||k>n)return 1;for(int i=0;i<k;i++){int s;if(scanf("%d",&s)!=1||s<0||s>=n)return 1;fin[s]=1;}for(int i=0;i<m;i++){int x,y;if(scanf("%d %c %d",&x,&ch,&y)!=3||x<0||x>=n||y<0||y>=n||(ch!='a'&&ch!='b'))return 1;edge[x][ch-'a'][y]=1;}if(scanf("%255s",word)!=1)return 1;cur[start]=1;for(int i=0;word[i];i++){if(word[i]!='a'&&word[i]!='b')return 1;memset(next,0,sizeof next);for(int x=0;x<n;x++)if(cur[x])for(int y=0;y<n;y++)if(edge[x][word[i]-'a'][y])next[y]=1;memcpy(cur,next,sizeof cur);}for(int x=0;x<n;x++)if(cur[x]&&fin[x]){puts("ACCEPT");return 0;}puts("REJECT");return 0;}
