@@ -1,0 +1,5 @@
+/* Dominance frontiers for a single-entry CFG using iterative dominator sets.
+   Nodes 0..n-1; all nodes must be reachable from 0. */
+#include <stdio.h>
+#include <stdint.h>
+int main(void){int n,m,g[20][20]={0},reach[20]={0},q[20],h=0,t=0;uint32_t dom[20],all,df[20]={0};if(scanf("%d%d",&n,&m)!=2||n<1||n>20||m<0||m>400)return 1;for(int i=0;i<m;i++){int a,b;if(scanf("%d%d",&a,&b)!=2||a<0||b<0||a>=n||b>=n)return 1;g[a][b]=1;}reach[0]=1;q[t++]=0;while(h<t){int a=q[h++];for(int b=0;b<n;b++)if(g[a][b]&&!reach[b])reach[b]=1,q[t++]=b;}if(t!=n){puts("UNREACHABLE");return 0;}all=(1u<<n)-1u;for(int i=0;i<n;i++)dom[i]=i?all:1;int change=1;while(change){change=0;for(int b=1;b<n;b++){uint32_t v=all;for(int a=0;a<n;a++)if(g[a][b])v&=dom[a];v|=1u<<b;if(v!=dom[b])dom[b]=v,change=1;}}for(int x=0;x<n;x++)for(int y=0;y<n;y++){int incoming=0;for(int p=0;p<n;p++)if(g[p][y]&&(dom[p]&(1u<<x)))incoming=1;if(incoming&&!(x!=y&&(dom[y]&(1u<<x))))df[x]|=1u<<y;}for(int x=0;x<n;x++){printf("DF(%d):",x);for(int y=0;y<n;y++)if(df[x]&(1u<<y))printf(" %d",y);putchar('\n');}return 0;}
