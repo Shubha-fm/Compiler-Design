@@ -1,6 +1,6 @@
 # Compiler Design Programs in C
 
-A collection of **190 numbered C programs** and **12 additional parser examples** for learning compiler construction. Topics include lexical analysis, automata, grammars, top-down and bottom-up parsing, intermediate code generation, optimization, and introductory code analysis.
+A collection of **200 numbered C programs** and **12 additional parser examples** for learning compiler construction. Topics include lexical analysis, automata, grammars, top-down and bottom-up parsing, intermediate code generation, optimization, and introductory code analysis.
 
 > **Educational scope:** Each program is a standalone example. Several use fixed grammars or demonstrate a single transformation. This repository is not a complete C compiler or a general-purpose parser-generator toolkit.
 
@@ -10,7 +10,7 @@ A collection of **190 numbered C programs** and **12 additional parser examples*
 Compiler-Design/
 ├── 01_lexical_analysis.c ... 20_dfa_binary_suffix.c   # Original programs 01–20
 ├── programs/
-│   └── 21_keyword_lookup.c ... 190_codegen_load_store.c    # Additional programs 21–190
+│   └── 21_keyword_lookup.c ... 200_lr_shift_reduce_trace.c    # Additional programs 21–200
 ├── parsers/
 │   ├── top_down/                                      # Six top-down examples
 │   ├── bottom_up/                                     # Six bottom-up/chart examples
@@ -317,3 +317,16 @@ bash tests/test_programs_181_190.sh
 ```
 
 The examples use bounded inputs and simplified semantics. The C/C++ CI workflow remains removed; tests can be run manually.
+
+## New programs 191–200
+
+Ten additional C11 exercises cover keyword boundaries, regex infix/postfix conversion, NFA MOVE, FOLLOW-set contributions, CFG dominance frontiers, reaching definitions, strength reduction, stack effects, CFG adjacency matrices, and a restricted shift/reduce parser trace.
+
+- [Programs 191–200 documentation](programs/README_191_200.md)
+- [Programs 191–200 test script](tests/test_programs_191_200.sh)
+
+```bash
+bash tests/test_programs_191_200.sh
+```
+
+All examples are intended for learning and use deliberately restricted input formats. Tests are illustrative and must be run manually. The previously removed C/C++ CI workflow has not been recreated.
