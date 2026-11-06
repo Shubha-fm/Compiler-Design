@@ -1,0 +1,3 @@
+/* Epsilon closure of an initial state set in a directed epsilon graph. */
+#include <stdio.h>
+int main(void){int n,m,k,g[32][32]={0},seen[32]={0},q[32],h=0,t=0;if(scanf("%d%d",&n,&m)!=2||n<1||n>32||m<0||m>1024)return 1;for(int i=0;i<m;i++){int a,b;if(scanf("%d%d",&a,&b)!=2||a<0||a>=n||b<0||b>=n)return 1;g[a][b]=1;}if(scanf("%d",&k)!=1||k<0||k>n)return 1;for(int i=0;i<k;i++){int s;if(scanf("%d",&s)!=1||s<0||s>=n)return 1;if(!seen[s])seen[s]=1,q[t++]=s;}while(h<t){int u=q[h++];for(int v=0;v<n;v++)if(g[u][v]&&!seen[v])seen[v]=1,q[t++]=v;}printf("closure:");for(int i=0;i<n;i++)if(seen[i])printf(" %d",i);putchar('\n');return 0;}
