@@ -1,0 +1,3 @@
+/* Union of two lowercase ASCII character classes given as strings. */
+#include <stdio.h>
+int main(void){char a[128],b[128];int found[26]={0};if(scanf("%127s %127s",a,b)!=2)return 1;for(int i=0;a[i];i++){if(a[i]<'a'||a[i]>'z')return 1;found[a[i]-'a']=1;}for(int i=0;b[i];i++){if(b[i]<'a'||b[i]>'z')return 1;found[b[i]-'a']=1;}printf("union:");for(int i=0;i<26;i++)if(found[i])printf("%c",'a'+i);putchar('\n');return 0;}
