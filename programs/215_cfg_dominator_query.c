@@ -1,0 +1,5 @@
+/* Query if x dominates y in a reachable CFG with entry 0.
+   Input n m, directed edges, x y. */
+#include <stdio.h>
+#include <stdint.h>
+int main(void){int n,m,g[30][30]={0},x,y,seen[30]={0},q[30],h=0,t=0;uint32_t d[30];if(scanf("%d%d",&n,&m)!=2||n<1||n>30||m<0||m>900)return 1;for(int i=0;i<m;i++){int a,b;if(scanf("%d%d",&a,&b)!=2||a<0||b<0||a>=n||b>=n)return 1;g[a][b]=1;}if(scanf("%d%d",&x,&y)!=2||x<0||x>=n||y<0||y>=n)return 1;seen[0]=1;q[t++]=0;while(h<t){int u=q[h++];for(int v=0;v<n;v++)if(g[u][v]&&!seen[v])seen[v]=1,q[t++]=v;}if(!seen[y]){puts("UNREACHABLE");return 0;}uint32_t all=(1u<<n)-1u;for(int i=0;i<n;i++)d[i]=i?all:1u;int changed=1;while(changed){changed=0;for(int v=1;v<n;v++)if(seen[v]){uint32_t z=all;for(int u=0;u<n;u++)if(seen[u]&&g[u][v])z&=d[u];z|=1u<<v;if(z!=d[v])d[v]=z,changed=1;}}puts((d[y]&(1u<<x))?"DOMINATES":"DOES NOT DOMINATE");return 0;}
