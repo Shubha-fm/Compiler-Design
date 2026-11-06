@@ -1,0 +1,4 @@
+/* Report overlapping FIRST sets for each pair of alternatives.
+   Input: n then n lowercase terminal sets, '-' represents empty. */
+#include <stdio.h>
+int main(void){int n,sets[20][26]={{0}},conflicts=0;char word[128];if(scanf("%d",&n)!=1||n<1||n>20)return 1;for(int i=0;i<n;i++){if(scanf("%127s",word)!=1)return 1;for(int j=0;word[j];j++){if(word[j]=='-'&&word[j+1]==0&&j==0)break;if(word[j]<'a'||word[j]>'z')return 1;sets[i][word[j]-'a']=1;}}for(int i=0;i<n;i++)for(int j=i+1;j<n;j++)for(int c=0;c<26;c++)if(sets[i][c]&&sets[j][c]){printf("conflict %d %d %c\n",i,j,'a'+c);conflicts++;}if(!conflicts)puts("NO CONFLICT");return 0;}
