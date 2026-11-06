@@ -1,6 +1,6 @@
 # Compiler Design Programs in C
 
-A collection of **210 numbered C programs** and **12 additional parser examples** for learning compiler construction. Topics include lexical analysis, automata, grammars, top-down and bottom-up parsing, intermediate code generation, optimization, and introductory code analysis.
+A collection of **220 numbered C programs** and **12 additional parser examples** for learning compiler construction. Topics include lexical analysis, automata, grammars, top-down and bottom-up parsing, intermediate code generation, optimization, and introductory code analysis.
 
 > **Educational scope:** Each program is a standalone example. Several use fixed grammars or demonstrate a single transformation. This repository is not a complete C compiler or a general-purpose parser-generator toolkit.
 
@@ -10,7 +10,7 @@ A collection of **210 numbered C programs** and **12 additional parser examples*
 Compiler-Design/
 ├── 01_lexical_analysis.c ... 20_dfa_binary_suffix.c   # Original programs 01–20
 ├── programs/
-│   └── 21_keyword_lookup.c ... 210_ir_jump_threading.c    # Additional programs 21–210
+│   └── 21_keyword_lookup.c ... 220_symbol_table_duplicate_scope.c    # Additional programs 21–220
 ├── parsers/
 │   ├── top_down/                                      # Six top-down examples
 │   ├── bottom_up/                                     # Six bottom-up/chart examples
@@ -343,3 +343,16 @@ bash tests/test_programs_201_210.sh
 ```
 
 These are bounded teaching examples with simplified semantics. The smoke tests are intended for manual execution. The C/C++ GitHub Actions workflow remains removed.
+
+## New programs 211–220
+
+Ten new C11 examples cover string-literal escape checking, ASCII character classes, multi-state epsilon closure, FIRST/FIRST conflicts, CFG domination queries, liveness-based dead assignment checks, register interval peaks, TAC USE/DEF analysis, parentheses nesting, and scope-aware duplicate declarations.
+
+- [Programs 211–220 guide](programs/README_211_220.md)
+- [Programs 211–220 smoke tests](tests/test_programs_211_220.sh)
+
+```bash
+bash tests/test_programs_211_220.sh
+```
+
+The programs use simplified, bounded inputs and are intended for learning. Tests run manually; the previously removed C/C++ GitHub Actions CI workflow has not been restored.
