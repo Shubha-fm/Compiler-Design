@@ -41,7 +41,7 @@ check '225_cfg_articulation_points' '4 3
 check '226_live_variables_fixedpoint' '2 1
 0 1
 0 1
-1 0' '0 IN=2 OUT=1'
+1 0' '0 IN=1 OUT=1'
 check '227_ir_constant_folding' 't = 7 * 6' 't = 42'
 check '228_register_graph_coloring' '3 3
 0 1
