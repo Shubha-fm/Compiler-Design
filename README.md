@@ -1,6 +1,6 @@
 # Compiler Design Programs in C
 
-A collection of **230 numbered C programs** and **12 additional parser examples** for learning compiler construction. Topics include lexical analysis, automata, grammars, top-down and bottom-up parsing, intermediate code generation, optimization, and introductory code analysis.
+A collection of **240 numbered C programs** and **12 additional parser examples** for learning compiler construction. Topics include lexical analysis, automata, grammars, top-down and bottom-up parsing, intermediate code generation, optimization, and introductory code analysis.
 
 > **Educational scope:** Each program is a standalone example. Several use fixed grammars or demonstrate a single transformation. This repository is not a complete C compiler or a general-purpose parser-generator toolkit.
 
@@ -10,7 +10,7 @@ A collection of **230 numbered C programs** and **12 additional parser examples*
 Compiler-Design/
 ├── 01_lexical_analysis.c ... 20_dfa_binary_suffix.c   # Original programs 01–20
 ├── programs/
-│   └── 21_keyword_lookup.c ... 230_bytecode_control_flow_validator.c    # Additional programs 21–230
+│   └── 21_keyword_lookup.c ... 240_assembly_basic_block_labels.c    # Additional programs 21–240
 ├── parsers/
 │   ├── top_down/                                      # Six top-down examples
 │   ├── bottom_up/                                     # Six bottom-up/chart examples
@@ -369,3 +369,16 @@ bash tests/test_programs_221_230.sh
 ```
 
 All programs are bounded teaching examples. No C/C++ GitHub Actions CI workflow was restored. Tests are run manually.
+
+## New programs 231–240
+
+Ten C11 examples introduce postfix-to-infix conversion, generic grammar nullability, shortest DFA state paths, epsilon-expanded NFA moves, grammar dependency ordering, dominance-based back edges, commutative expression reuse, bytecode stack-height checks, nested symbol scopes, and basic-block leader detection.
+
+- [Programs 231–240 documentation](programs/README_231_240.md)
+- [Programs 231–240 manual tests](tests/test_programs_231_240.sh)
+
+```bash
+bash tests/test_programs_231_240.sh
+```
+
+Programs are intentionally bounded educational implementations. The removed C/C++ CI workflow has not been restored.
