@@ -1,6 +1,6 @@
 # Compiler Design Programs in C
 
-A collection of **240 numbered C programs** and **12 additional parser examples** for learning compiler construction. Topics include lexical analysis, automata, grammars, top-down and bottom-up parsing, intermediate code generation, optimization, and introductory code analysis.
+A collection of **250 numbered C programs** and **12 additional parser examples** for learning compiler construction. Topics include lexical analysis, automata, grammars, top-down and bottom-up parsing, intermediate code generation, optimization, and introductory code analysis.
 
 > **Educational scope:** Each program is a standalone example. Several use fixed grammars or demonstrate a single transformation. This repository is not a complete C compiler or a general-purpose parser-generator toolkit.
 
@@ -10,7 +10,7 @@ A collection of **240 numbered C programs** and **12 additional parser examples*
 Compiler-Design/
 ├── 01_lexical_analysis.c ... 20_dfa_binary_suffix.c   # Original programs 01–20
 ├── programs/
-│   └── 21_keyword_lookup.c ... 240_assembly_basic_block_labels.c    # Additional programs 21–240
+│   └── 21_keyword_lookup.c ... 250_linker_relocation_resolver.c    # Additional programs 21–250
 ├── parsers/
 │   ├── top_down/                                      # Six top-down examples
 │   ├── bottom_up/                                     # Six bottom-up/chart examples
@@ -382,3 +382,16 @@ bash tests/test_programs_231_240.sh
 ```
 
 Programs are intentionally bounded educational implementations. The removed C/C++ CI workflow has not been restored.
+
+## New programs 241–250
+
+Ten C11 examples cover source identifier spans, bounded regex repetition, product-DFA reachability, grammar productivity, predictive LL(1) parsing, edge-frequency profiling, constant-propagation lattices, SSA phi arity, register-interference degrees, and basic linker relocation.
+
+- [Programs 241–250 documentation](programs/README_241_250.md)
+- [Programs 241–250 sample tests](tests/test_programs_241_250.sh)
+
+```bash
+bash tests/test_programs_241_250.sh
+```
+
+The programs are teaching examples using bounded inputs, with a manual sample test for each. The C/C++ GitHub Actions CI workflow remains removed.
