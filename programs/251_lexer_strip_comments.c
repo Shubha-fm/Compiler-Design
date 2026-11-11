@@ -1,4 +1,4 @@
-/* Remove C // and /* ... */ comments while preserving string and char literals.
+/* Remove C line and block comments while preserving string and char literals.
    Newlines inside comments are preserved for source line positions. */
 #include <stdio.h>
 int main(void){
