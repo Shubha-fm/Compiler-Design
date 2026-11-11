@@ -1,6 +1,6 @@
 # Compiler Design Programs in C
 
-A collection of **250 numbered C programs** and **12 additional parser examples** for learning compiler construction. Topics include lexical analysis, automata, grammars, top-down and bottom-up parsing, intermediate code generation, optimization, and introductory code analysis.
+A collection of **260 numbered C programs** and **12 additional parser examples** for learning compiler construction. Topics include lexical analysis, automata, grammars, top-down and bottom-up parsing, intermediate code generation, optimization, and introductory code analysis.
 
 > **Educational scope:** Each program is a standalone example. Several use fixed grammars or demonstrate a single transformation. This repository is not a complete C compiler or a general-purpose parser-generator toolkit.
 
@@ -10,7 +10,7 @@ A collection of **250 numbered C programs** and **12 additional parser examples*
 Compiler-Design/
 ├── 01_lexical_analysis.c ... 20_dfa_binary_suffix.c   # Original programs 01–20
 ├── programs/
-│   └── 21_keyword_lookup.c ... 250_linker_relocation_resolver.c    # Additional programs 21–250
+│   └── 21_keyword_lookup.c ... 260_bytecode_stack_depth_merge.c    # Additional programs 21–260
 ├── parsers/
 │   ├── top_down/                                      # Six top-down examples
 │   ├── bottom_up/                                     # Six bottom-up/chart examples
@@ -395,3 +395,16 @@ bash tests/test_programs_241_250.sh
 ```
 
 The programs are teaching examples using bounded inputs, with a manual sample test for each. The C/C++ GitHub Actions CI workflow remains removed.
+
+## New programs 251–260
+
+Ten C11 examples cover comment removal, DFA equivalence classes, epsilon-NFA acceptance, LL(1) SELECT-set conflicts, immediate postdominators, available-expression analysis, algebraic TAC simplification, greedy register spilling, two-pass assembler labels, and bytecode stack-height checking.
+
+- [Programs 251–260 documentation](programs/README_251_260.md)
+- [Programs 251–260 sample tests](tests/test_programs_251_260.sh)
+
+```bash
+bash tests/test_programs_251_260.sh
+```
+
+These are bounded educational programs with simplified semantics. The removed C/C++ GitHub Actions CI workflow has not been restored.
