@@ -1,6 +1,6 @@
 # Compiler Design Programs in C
 
-A collection of **270 numbered C programs** and **12 additional parser examples** for learning compiler construction. Topics include lexical analysis, automata, grammars, top-down and bottom-up parsing, intermediate code generation, optimization, and introductory code analysis.
+A collection of **280 numbered C programs** and **12 additional parser examples** for learning compiler construction. Topics include lexical analysis, automata, grammars, top-down and bottom-up parsing, intermediate code generation, optimization, and introductory code analysis.
 
 > **Educational scope:** Each program is a standalone example. Several use fixed grammars or demonstrate a single transformation. This repository is not a complete C compiler or a general-purpose parser-generator toolkit.
 
@@ -10,7 +10,7 @@ A collection of **270 numbered C programs** and **12 additional parser examples*
 Compiler-Design/
 ├── 01_lexical_analysis.c ... 20_dfa_binary_suffix.c   # Original programs 01–20
 ├── programs/
-│   └── 21_keyword_lookup.c ... 270_lr_parse_action_decoder.c    # Additional programs 21–270
+│   └── 21_keyword_lookup.c ... 280_tac_identifier_validation.c    # Additional programs 21–280
 ├── parsers/
 │   ├── top_down/                                      # Six top-down examples
 │   ├── bottom_up/                                     # Six bottom-up/chart examples
@@ -421,3 +421,16 @@ bash tests/test_programs_261_270.sh
 ```
 
 These are bounded educational examples, and sample tests should be executed manually. The previously removed C/C++ GitHub Actions workflow has not been restored.
+
+## New programs 271–280
+
+Ten C11 exercises introduce decimal floating-literal recognition, DFA reachability pruning, FIRST terminals without epsilon, shift/reduce stack traces, DFS loop-header candidates, GEN/KILL transfer, expression sharing, register-pressure timelines, assembler label addresses, and TAC identifier validation.
+
+- [Programs 271–280 documentation](programs/README_271_280.md)
+- [Programs 271–280 sample tests](tests/test_programs_271_280.sh)
+
+```bash
+bash tests/test_programs_271_280.sh
+```
+
+All examples use restricted educational inputs. The C/C++ GitHub Actions workflow remains removed.
