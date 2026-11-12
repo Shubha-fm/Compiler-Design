@@ -1,6 +1,6 @@
 # Compiler Design Programs in C
 
-A collection of **260 numbered C programs** and **12 additional parser examples** for learning compiler construction. Topics include lexical analysis, automata, grammars, top-down and bottom-up parsing, intermediate code generation, optimization, and introductory code analysis.
+A collection of **270 numbered C programs** and **12 additional parser examples** for learning compiler construction. Topics include lexical analysis, automata, grammars, top-down and bottom-up parsing, intermediate code generation, optimization, and introductory code analysis.
 
 > **Educational scope:** Each program is a standalone example. Several use fixed grammars or demonstrate a single transformation. This repository is not a complete C compiler or a general-purpose parser-generator toolkit.
 
@@ -10,7 +10,7 @@ A collection of **260 numbered C programs** and **12 additional parser examples*
 Compiler-Design/
 ├── 01_lexical_analysis.c ... 20_dfa_binary_suffix.c   # Original programs 01–20
 ├── programs/
-│   └── 21_keyword_lookup.c ... 260_bytecode_stack_depth_merge.c    # Additional programs 21–260
+│   └── 21_keyword_lookup.c ... 270_lr_parse_action_decoder.c    # Additional programs 21–270
 ├── parsers/
 │   ├── top_down/                                      # Six top-down examples
 │   ├── bottom_up/                                     # Six bottom-up/chart examples
@@ -408,3 +408,16 @@ bash tests/test_programs_251_260.sh
 ```
 
 These are bounded educational programs with simplified semantics. The removed C/C++ GitHub Actions CI workflow has not been restored.
+
+## New programs 261–270
+
+Ten new C11 exercises cover decimal digit separators, DFA complement, CFG reachability counts, nullable production variants, predictive table population, very-busy expressions, TAC triples, linear-scan register allocation, redundant moves, and LR ACTION decoding.
+
+- [Programs 261–270 documentation](programs/README_261_270.md)
+- [Programs 261–270 manual tests](tests/test_programs_261_270.sh)
+
+```bash
+bash tests/test_programs_261_270.sh
+```
+
+These are bounded educational examples, and sample tests should be executed manually. The previously removed C/C++ GitHub Actions workflow has not been restored.
