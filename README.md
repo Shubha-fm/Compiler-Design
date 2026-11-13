@@ -1,6 +1,6 @@
 # Compiler Design Programs in C
 
-A collection of **280 numbered C programs** and **12 additional parser examples** for learning compiler construction. Topics include lexical analysis, automata, grammars, top-down and bottom-up parsing, intermediate code generation, optimization, and introductory code analysis.
+A collection of **290 numbered C programs** and **12 additional parser examples** for learning compiler construction. Topics include lexical analysis, automata, grammars, top-down and bottom-up parsing, intermediate code generation, optimization, and introductory code analysis.
 
 > **Educational scope:** Each program is a standalone example. Several use fixed grammars or demonstrate a single transformation. This repository is not a complete C compiler or a general-purpose parser-generator toolkit.
 
@@ -10,7 +10,7 @@ A collection of **280 numbered C programs** and **12 additional parser examples*
 Compiler-Design/
 ├── 01_lexical_analysis.c ... 20_dfa_binary_suffix.c   # Original programs 01–20
 ├── programs/
-│   └── 21_keyword_lookup.c ... 280_tac_identifier_validation.c    # Additional programs 21–280
+│   └── 21_keyword_lookup.c ... 290_lr_reduce_goto_transition.c    # Additional programs 21–290
 ├── parsers/
 │   ├── top_down/                                      # Six top-down examples
 │   ├── bottom_up/                                     # Six bottom-up/chart examples
@@ -434,3 +434,16 @@ bash tests/test_programs_271_280.sh
 ```
 
 All examples use restricted educational inputs. The C/C++ GitHub Actions workflow remains removed.
+
+## New programs 281–290
+
+Ten C11 exercises add hexadecimal-token validation, binary DFA traces, indirect left-recursion detection, arithmetic operator precedence, reverse CFG reachability, SSA phi predecessor listings, constant-branch elimination, register interference edges, TAC quadruples, and LR reduction/GOTO stack updates.
+
+- [Programs 281–290 documentation](programs/README_281_290.md)
+- [Programs 281–290 sample tests](tests/test_programs_281_290.sh)
+
+```bash
+bash tests/test_programs_281_290.sh
+```
+
+All examples use bounded educational inputs. The previously removed C/C++ CI workflow has not been restored.
