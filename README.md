@@ -1,6 +1,6 @@
 # Compiler Design Programs in C
 
-A collection of **290 numbered C programs** and **12 additional parser examples** for learning compiler construction. Topics include lexical analysis, automata, grammars, top-down and bottom-up parsing, intermediate code generation, optimization, and introductory code analysis.
+A collection of **290 numbered C programs**, **12 additional parser examples**, and **5 playable C terminal games** for learning programming, compiler construction, and algorithms. Topics include lexical analysis, automata, grammars, top-down and bottom-up parsing, intermediate code generation, optimization, and introductory code analysis.
 
 > **Educational scope:** Each program is a standalone example. Several use fixed grammars or demonstrate a single transformation. This repository is not a complete C compiler or a general-purpose parser-generator toolkit.
 
@@ -447,3 +447,28 @@ bash tests/test_programs_281_290.sh
 ```
 
 All examples use bounded educational inputs. The previously removed C/C++ CI workflow has not been restored.
+
+## Playable C terminal games
+
+A new [`games/`](games/README.md) folder includes five independent C11 games, separate from the numbered compiler design programs:
+
+1. [Tic-Tac-Toe vs minimax AI](games/01_tic_tac_toe_ai.c) (recursion and game-tree search)
+2. [Connect Four](games/02_connect_four.c) (two-player grid game)
+3. [Hangman](games/03_hangman.c) (strings and guessed-letter tracking)
+4. [2048](games/04_game_2048.c) (tile merging and a seeded PRNG)
+5. [Maze Escape](games/05_maze_escape.c) (grid navigation)
+
+Build an example using a C11 compiler:
+
+```bash
+gcc -std=c11 -Wall -Wextra -pedantic games/01_tic_tac_toe_ai.c -o tic
+./tic
+```
+
+See [games/README.md](games/README.md) for instructions, controls, and examples. To compile all games and run scripted manual checks:
+
+```bash
+bash tests/test_games.sh
+```
+
+The game collection is independent of programs 1–290. No C/C++ CI workflow was restored.
