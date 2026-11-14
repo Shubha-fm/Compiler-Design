@@ -1,0 +1,6 @@
+/* Two-player Connect Four on a 6x7 grid. Select columns 1-7; q quits. */
+#include <stdio.h>
+static char grid[6][7];static int height[7]={0};
+static void draw(void){puts("");for(int r=5;r>=0;r--){for(int c=0;c<7;c++)printf("|%c",grid[r][c]?grid[r][c]:'.');puts("|");}puts(" 1 2 3 4 5 6 7");}
+static int won(int r,int c,char p){const int dir[4][2]={{1,0},{0,1},{1,1},{1,-1}};for(int i=0;i<4;i++){int count=1;for(int sign=-1;sign<=1;sign+=2){int dr=dir[i][0]*sign,dc=dir[i][1]*sign;for(int step=1;;step++){int x=r+dr*step,y=c+dc*step;if(x<0||x>=6||y<0||y>=7||grid[x][y]!=p)break;count++;}}if(count>=4)return 1;}return 0;}
+int main(void){int moves=0;char player='X';puts("Connect Four: Players X and O. Column 1-7; q quits.");while(moves<42){draw();char input[32];printf("%c column: ",player);fflush(stdout);if(scanf("%31s",input)!=1||input[0]=='q'){puts("Game ended.");return 0;}int c=-1;if(input[0]>='1'&&input[0]<='7'&&input[1]==0)c=input[0]-'1';if(c<0||height[c]>=6){puts("Invalid or full column.");continue;}int r=height[c]++;grid[r][c]=player;moves++;if(won(r,c,player)){draw();printf("%c wins!\n",player);return 0;}player=player=='X'?'O':'X';}draw();puts("Draw!");return 0;}
