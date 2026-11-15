@@ -1,50 +1,64 @@
 # C Terminal Games
 
-Five playable console games written in standard C11. These examples exercise algorithms, arrays, graphs, dynamic search, strings, input validation, and game state.
+Ten independent console games written in C11. The games supplement the compiler-design examples and demonstrate recursion, game-state design, arrays, search, validation, and terminal input handling.
 
-| Game | Source | Players | Main concepts |
-|---|---|---|---|
-| Tic-Tac-Toe with AI | [01_tic_tac_toe_ai.c](01_tic_tac_toe_ai.c) | 1 vs computer | Minimax search, recursion, game trees |
-| Connect Four | [02_connect_four.c](02_connect_four.c) | 2 local players | Board representation, directional win detection |
-| Hangman | [03_hangman.c](03_hangman.c) | 1 | Strings, character processing, guess tracking |
-| 2048 | [04_game_2048.c](04_game_2048.c) | 1 | Grid transformations, tile merging, seeded pseudorandomness |
-| Maze Escape | [05_maze_escape.c](05_maze_escape.c) | 1 | Grid navigation, collision detection, reachability |
+| Game | Source | Main concepts |
+|---|---|---|
+| Tic-Tac-Toe vs AI | [01_tic_tac_toe_ai.c](01_tic_tac_toe_ai.c) | Minimax recursion, adversarial search |
+| Connect Four | [02_connect_four.c](02_connect_four.c) | Board operations, directional pattern checking |
+| Hangman | [03_hangman.c](03_hangman.c) | String processing, guess tracking |
+| 2048 | [04_game_2048.c](04_game_2048.c) | Grid transformations, tile merging |
+| Maze Escape | [05_maze_escape.c](05_maze_escape.c) | Grid movement, boundaries |
+| Mini Battleship | [06_battleship.c](06_battleship.c) | Grid coordinates, hidden information |
+| Word Guess (Wordle-style) | [07_wordle.c](07_wordle.c) | Exact/partial letter feedback, duplicate letters |
+| Turn-based Snake | [08_snake_turn_based.c](08_snake_turn_based.c) | Snake body tracking, collision, food |
+| Minesweeper | [09_minesweeper.c](09_minesweeper.c) | Neighborhood counting, reveal logic |
+| Rock Paper Scissors | [10_rock_paper_scissors.c](10_rock_paper_scissors.c) | Game rounds, simple seeded pseudorandomness |
 
-## Compile and play
+## Compile and run a game
 
-Requires GCC or another C11-compatible compiler and a terminal.
-
-```bash
-gcc -std=c11 -Wall -Wextra -pedantic games/01_tic_tac_toe_ai.c -o tic
-./tic
-```
-
-To play the other games:
+Install GCC (or another C11 compiler), then run:
 
 ```bash
-gcc -std=c11 -Wall -Wextra -pedantic games/02_connect_four.c -o connect4
-./connect4
-
-gcc -std=c11 -Wall -Wextra -pedantic games/03_hangman.c -o hangman
-./hangman 0
-
-gcc -std=c11 -Wall -Wextra -pedantic games/04_game_2048.c -o game2048
-./game2048 42
-
-gcc -std=c11 -Wall -Wextra -pedantic games/05_maze_escape.c -o maze
-./maze
+gcc -std=c11 -Wall -Wextra -pedantic games/08_snake_turn_based.c -o snake
+./snake
 ```
 
-**Controls:** Tic-Tac-Toe accepts positions 1–9; Connect Four accepts columns 1–7; Hangman accepts one letter at a time; 2048 and Maze Escape use `w`, `a`, `s`, `d`. Type `q` to quit. On Windows, build using GCC/MinGW and run the resulting `.exe` files.
+For the new games:
 
-For 2048, the optional numeric argument selects a reproducible pseudorandom seed. For Hangman, the optional word index is 0–5. Neither feature provides cryptographic randomness.
+```bash
+gcc -std=c11 games/06_battleship.c -o battleship
+./battleship
 
-## Check builds and example games
+gcc -std=c11 games/07_wordle.c -o wordguess
+./wordguess
+
+gcc -std=c11 games/09_minesweeper.c -o minesweeper
+./minesweeper
+
+gcc -std=c11 games/10_rock_paper_scissors.c -o rps
+./rps 42
+```
+
+On Windows with MinGW GCC, run the resulting `.exe` files. The Snake and Rock-Paper-Scissors games accept an optional integer seed, making their pseudo-random choices reproducible.
+
+## Controls and goals
+
+- **Battleship:** Guess row and column (1–5) to find all four ship cells.
+- **Word Guess:** Enter a five-letter word. `+` means a letter in the right position, `?` means elsewhere, and `-` means absent. You get six guesses.
+- **Snake:** Use `w`, `a`, `s`, `d` to move one cell at a time, eat food and avoid collisions.
+- **Minesweeper:** Enter row and column (1–5), uncover all 21 safe squares and avoid four hidden mines. No flags or automatic flood-fill.
+- **Rock Paper Scissors:** Enter `r`, `p`, `s` or full names. First to three wins.
+
+Type `q` to quit any game.
+
+## Manual checks
 
 ```bash
 bash tests/test_games.sh
+bash tests/test_games_06_10.sh
 ```
 
-The script compiles all five games using `gcc -std=c11 -Wall -Wextra -Werror -pedantic`, then executes eight basic scripted checks, including a Connect Four victory, a Hangman victory, and a maze escape. The checks are representative, not exhaustive. They are **manual tests**, and no C/C++ GitHub Actions workflow is added.
+The second script builds the five new games with `-Wall -Wextra -Werror -pedantic` and runs nine scripted checks. These are representative cases, not exhaustive quality assurance. The repository's C/C++ GitHub Actions workflow remains removed.
 
-The original 290 numbered compiler design programs and parser examples remain unchanged.
+These examples are meant for learning. The games run in a standard terminal, not a graphical game engine. Word Guess uses a fixed secret, Battleship and Minesweeper use fixed boards, and Snake uses turn-based movement.
