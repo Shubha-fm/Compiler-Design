@@ -1,6 +1,6 @@
 # Compiler Design Programs in C
 
-A collection of **290 numbered C programs**, **12 additional parser examples**, and **5 playable C terminal games** for learning programming, compiler construction, and algorithms. Topics include lexical analysis, automata, grammars, top-down and bottom-up parsing, intermediate code generation, optimization, and introductory code analysis.
+A collection of **290 numbered C programs**, **12 additional parser examples**, and **10 playable C terminal games** for learning programming, compiler construction, and algorithms. Topics include lexical analysis, automata, grammars, top-down and bottom-up parsing, intermediate code generation, optimization, and introductory code analysis.
 
 > **Educational scope:** Each program is a standalone example. Several use fixed grammars or demonstrate a single transformation. This repository is not a complete C compiler or a general-purpose parser-generator toolkit.
 
@@ -450,7 +450,7 @@ All examples use bounded educational inputs. The previously removed C/C++ CI wor
 
 ## Playable C terminal games
 
-A new [`games/`](games/README.md) folder includes five independent C11 games, separate from the numbered compiler design programs:
+A new [`games/`](games/README.md) folder includes ten independent C11 games, separate from the numbered compiler design programs:
 
 1. [Tic-Tac-Toe vs minimax AI](games/01_tic_tac_toe_ai.c) (recursion and game-tree search)
 2. [Connect Four](games/02_connect_four.c) (two-player grid game)
@@ -472,3 +472,21 @@ bash tests/test_games.sh
 ```
 
 The game collection is independent of programs 1–290. No C/C++ CI workflow was restored.
+
+### More games: 6–10
+
+Five additional standalone terminal games have been added to [`games/`](games/README.md), separate from the 290 numbered compiler design programs:
+
+- [Mini Battleship](games/06_battleship.c): locate four hidden ship cells on a 5×5 grid.
+- [Word Guess](games/07_wordle.c): Wordle-style five-letter feedback and six attempts.
+- [Turn-based Snake](games/08_snake_turn_based.c): move, eat food and avoid collisions.
+- [Minesweeper](games/09_minesweeper.c): uncover safe cells without hitting mines.
+- [Rock Paper Scissors](games/10_rock_paper_scissors.c): play first-to-three against the computer.
+
+Run manual checks for the new games:
+
+```bash
+bash tests/test_games_06_10.sh
+```
+
+See the [games README](games/README.md) for build commands, controls, and limitations. No C/C++ CI workflow has been restored.
