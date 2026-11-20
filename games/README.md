@@ -1,6 +1,6 @@
 # C Terminal Games
 
-Ten independent console games written in C11. The games supplement the compiler-design examples and demonstrate recursion, game-state design, arrays, search, validation, and terminal input handling.
+Fifteen independent console games written in C11. The games supplement the compiler-design examples and demonstrate recursion, game-state design, arrays, search, validation, and terminal input handling.
 
 | Game | Source | Main concepts |
 |---|---|---|
@@ -14,6 +14,12 @@ Ten independent console games written in C11. The games supplement the compiler-
 | Turn-based Snake | [08_snake_turn_based.c](08_snake_turn_based.c) | Snake body tracking, collision, food |
 | Minesweeper | [09_minesweeper.c](09_minesweeper.c) | Neighborhood counting, reveal logic |
 | Rock Paper Scissors | [10_rock_paper_scissors.c](10_rock_paper_scissors.c) | Game rounds, simple seeded pseudorandomness |
+
+| Mastermind | [11_mastermind.c](11_mastermind.c) | Code-breaking, constrained guesses, seeded pseudorandomness |
+| Blackjack | [12_blackjack.c](12_blackjack.c) | Hand scoring, dealer rules, state transitions |
+| Mini Sudoku | [13_sudoku.c](13_sudoku.c) | Constraint validation, 4×4 puzzle grid |
+| Dungeon Quest | [14_dungeon_quest.c](14_dungeon_quest.c) | Exploration, inventory, locked doors |
+| Nim vs Computer | [15_nim_ai.c](15_nim_ai.c) | Combinatorial game strategy, modulo arithmetic |
 
 ## Compile and run a game
 
@@ -62,3 +68,26 @@ bash tests/test_games_06_10.sh
 The second script builds the five new games with `-Wall -Wextra -Werror -pedantic` and runs nine scripted checks. These are representative cases, not exhaustive quality assurance. The repository's C/C++ GitHub Actions workflow remains removed.
 
 These examples are meant for learning. The games run in a standard terminal, not a graphical game engine. Word Guess uses a fixed secret, Battleship and Minesweeper use fixed boards, and Snake uses turn-based movement.
+
+## Games 11–15: more strategy and puzzles
+
+- **Mastermind:** Guess four distinct digits between 1 and 6. You receive counts of exact and misplaced digits, with up to ten attempts. Optional numeric seed.
+- **Blackjack:** Try to beat the dealer without exceeding 21. Enter `h` to hit, `s` to stand, or `q` to quit. This is a card-scoring teaching example without betting; optional numeric seed.
+- **Mini Sudoku:** Fill a fixed 4×4 puzzle. Enter `row column value` using numbers 1–4. The game checks rows, columns, and 2×2 boxes.
+- **Dungeon Quest:** Navigate using `w`, `a`, `s`, `d`, find a key, unlock a door, and reach treasure.
+- **Nim:** Remove one to three stones per turn against a strategy-based computer. The default pile contains 21 stones; optionally supply a starting pile count between 1 and 100.
+
+Compile and play an example:
+
+```bash
+gcc -std=c11 -Wall -Wextra -pedantic games/14_dungeon_quest.c -o dungeon
+./dungeon
+```
+
+The additional manual tests are located in [`tests/test_games_11_15.sh`](../tests/test_games_11_15.sh):
+
+```bash
+bash tests/test_games_11_15.sh
+```
+
+All five games compiled with GCC in strict C11 mode and passed ten scripted checks before upload. Tests are examples rather than exhaustive verification. The games run in a terminal, not a graphical engine. No C/C++ GitHub Actions workflow was added.
