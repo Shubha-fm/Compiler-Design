@@ -1,6 +1,6 @@
 # Compiler Design Programs in C
 
-A collection of **290 numbered C programs**, **12 additional parser examples**, and **10 playable C terminal games** for learning programming, compiler construction, and algorithms. Topics include lexical analysis, automata, grammars, top-down and bottom-up parsing, intermediate code generation, optimization, and introductory code analysis.
+A collection of **290 numbered C programs**, **12 additional parser examples**, and **15 playable C terminal games** for learning programming, compiler construction, and algorithms. Topics include lexical analysis, automata, grammars, top-down and bottom-up parsing, intermediate code generation, optimization, and introductory code analysis.
 
 > **Educational scope:** Each program is a standalone example. Several use fixed grammars or demonstrate a single transformation. This repository is not a complete C compiler or a general-purpose parser-generator toolkit.
 
@@ -450,7 +450,7 @@ All examples use bounded educational inputs. The previously removed C/C++ CI wor
 
 ## Playable C terminal games
 
-A new [`games/`](games/README.md) folder includes ten independent C11 games, separate from the numbered compiler design programs:
+A new [`games/`](games/README.md) folder includes fifteen independent C11 games, separate from the numbered compiler design programs:
 
 1. [Tic-Tac-Toe vs minimax AI](games/01_tic_tac_toe_ai.c) (recursion and game-tree search)
 2. [Connect Four](games/02_connect_four.c) (two-player grid game)
@@ -490,3 +490,23 @@ bash tests/test_games_06_10.sh
 ```
 
 See the [games README](games/README.md) for build commands, controls, and limitations. No C/C++ CI workflow has been restored.
+
+### New terminal games 11–15
+
+Five more C11 games are available in the independent [`games/`](games/README.md) collection:
+
+- [Mastermind](games/11_mastermind.c): break a four-digit secret with exact and misplaced clues.
+- [Blackjack](games/12_blackjack.c): hit or stand against a computer dealer, with no betting.
+- [Mini Sudoku](games/13_sudoku.c): solve a fixed 4×4 constraint puzzle.
+- [Dungeon Quest](games/14_dungeon_quest.c): collect a key and unlock a treasure route.
+- [Nim vs Computer](games/15_nim_ai.c): play a take-away strategy game.
+
+To build one game and run the new checks:
+
+```bash
+gcc -std=c11 games/14_dungeon_quest.c -o dungeon
+./dungeon
+bash tests/test_games_11_15.sh
+```
+
+These additions leave the **290 numbered compiler-design C programs** and **12 parser examples** unchanged. The previously removed C/C++ CI workflow has not been restored.
