@@ -1,6 +1,6 @@
 # C Terminal Games
 
-Fifteen independent console games written in C11. The games supplement the compiler-design examples and demonstrate recursion, game-state design, arrays, search, validation, and terminal input handling.
+Twenty-five independent console games written in C11. The games supplement the compiler-design examples and demonstrate recursion, game-state design, arrays, search, validation, and terminal input handling.
 
 | Game | Source | Main concepts |
 |---|---|---|
@@ -132,3 +132,46 @@ bash tests/test_games_16_20.sh
 ```
 
 This test script compiles the five games with strict C11 compiler warnings and checks both quitting and solving/winning paths. It has not been executed in the ChatGPT environment. No C/C++ GitHub Actions workflow has been restored.
+
+## Games 21–25
+
+Five more C11 terminal games have been added. They use no third-party dependencies.
+
+| Game | Source | What you learn |
+|---|---|---|
+| Mini Reversi | [21_reversi.c](21_reversi.c) | Two-player strategy, directional captures, legal moves |
+| Sokoban | [22_sokoban.c](22_sokoban.c) | Push-box grid puzzles and collision checking |
+| Typing Challenge | [23_typing_challenge.c](23_typing_challenge.c) | Exact text comparisons and input handling |
+| Bulls and Cows | [24_bulls_and_cows.c](24_bulls_and_cows.c) | Four-digit deduction with bulls/cows feedback |
+| Knight's Tour | [25_knight_tour.c](25_knight_tour.c) | Recursive backtracking on a chessboard |
+
+### Compile and play
+
+```bash
+gcc -std=c11 -Wall -Wextra -pedantic games/21_reversi.c -o reversi
+./reversi
+
+gcc -std=c11 -Wall -Wextra -pedantic games/22_sokoban.c -o sokoban
+./sokoban
+
+gcc -std=c11 -Wall -Wextra -pedantic games/23_typing_challenge.c -o typing
+./typing
+
+gcc -std=c11 -Wall -Wextra -pedantic games/24_bulls_and_cows.c -o bulls
+./bulls
+
+gcc -std=c11 -Wall -Wextra -pedantic games/25_knight_tour.c -o knight
+./knight
+```
+
+Use row and column numbers 1–4 in Reversi, W/A/S/D in Sokoban, complete sentences in Typing Challenge, distinct four-digit guesses in Bulls and Cows, and a 1–5 starting square in Knight's Tour. Enter `q` at any game's main prompt to quit.
+
+### Manual smoke tests
+
+```bash
+bash tests/test_games_21_25.sh
+```
+
+The test script compiles all five games using strict C11 warning settings and checks ten input sequences. It is intended to run locally; uploading the test script is not evidence that it passed. A full Knight's Tour may take substantial time because the search uses straightforward backtracking. The games use intentionally fixed starting boards and/or secrets.
+
+The C/C++ GitHub Actions CI workflow remains removed.
