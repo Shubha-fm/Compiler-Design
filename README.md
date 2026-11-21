@@ -1,6 +1,6 @@
 # Compiler Design Programs in C
 
-A collection of **290 numbered C programs**, **12 additional parser examples**, and **20 playable C terminal games** for learning programming, compiler construction, and algorithms. Topics include lexical analysis, automata, grammars, top-down and bottom-up parsing, intermediate code generation, optimization, and introductory code analysis.
+A collection of **290 numbered C programs**, **12 additional parser examples**, and **25 playable C terminal games** for learning programming, compiler construction, and algorithms. Topics include lexical analysis, automata, grammars, top-down and bottom-up parsing, intermediate code generation, optimization, and introductory code analysis.
 
 > **Educational scope:** Each program is a standalone example. Several use fixed grammars or demonstrate a single transformation. This repository is not a complete C compiler or a general-purpose parser-generator toolkit.
 
@@ -528,3 +528,21 @@ bash tests/test_games_16_20.sh
 ```
 
 See [games/README.md](games/README.md) for controls and standalone build commands. The 290 numbered compiler programs, other parser examples, and previously added games remain unchanged. The removed C/C++ CI workflow has not been restored.
+
+### New games 21–25
+
+The [games collection](games/README.md) now includes five more standalone C11 terminal games, in addition to the earlier 20:
+
+- [Mini Reversi](games/21_reversi.c): two-player disk-flipping strategy on a 4×4 board
+- [Sokoban](games/22_sokoban.c): push the box onto the goal using grid movement
+- [Typing Challenge](games/23_typing_challenge.c): practice exact string input with five programming-related prompts
+- [Bulls and Cows](games/24_bulls_and_cows.c): deduce a secret four-digit code
+- [Knight's Tour](games/25_knight_tour.c): backtracking challenge on a 5×5 chessboard
+
+Build and run manual checks for games 21–25:
+
+```bash
+bash tests/test_games_21_25.sh
+```
+
+[Game instructions and controls](games/README.md). These are independent of the 290 numbered compiler-design programs and 12 parser examples. The removed C/C++ CI workflow has not been restored.
