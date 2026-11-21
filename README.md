@@ -1,6 +1,6 @@
 # Compiler Design Programs in C
 
-A collection of **290 numbered C programs**, **12 additional parser examples**, and **15 playable C terminal games** for learning programming, compiler construction, and algorithms. Topics include lexical analysis, automata, grammars, top-down and bottom-up parsing, intermediate code generation, optimization, and introductory code analysis.
+A collection of **290 numbered C programs**, **12 additional parser examples**, and **20 playable C terminal games** for learning programming, compiler construction, and algorithms. Topics include lexical analysis, automata, grammars, top-down and bottom-up parsing, intermediate code generation, optimization, and introductory code analysis.
 
 > **Educational scope:** Each program is a standalone example. Several use fixed grammars or demonstrate a single transformation. This repository is not a complete C compiler or a general-purpose parser-generator toolkit.
 
@@ -510,3 +510,21 @@ bash tests/test_games_11_15.sh
 ```
 
 These additions leave the **290 numbered compiler-design C programs** and **12 parser examples** unchanged. The previously removed C/C++ CI workflow has not been restored.
+
+### New games 16–20
+
+Five additional independent C11 terminal games are in the [games folder](games/README.md):
+
+- [8-Puzzle](games/16_eight_puzzle.c): move a blank cell to restore the ordered 3×3 board
+- [Compiler Quiz](games/17_compiler_quiz.c): a five-question game about compiler concepts
+- [Tower of Hanoi](games/18_tower_of_hanoi.c): move three disks between pegs under size rules
+- [Lights Out](games/19_lights_out.c): toggle cells and adjacent neighbors to clear the board
+- [Memory Match](games/20_memory_match.c): find all four matching pairs
+
+To compile and test games 16–20 manually:
+
+```bash
+bash tests/test_games_16_20.sh
+```
+
+See [games/README.md](games/README.md) for controls and standalone build commands. The 290 numbered compiler programs, other parser examples, and previously added games remain unchanged. The removed C/C++ CI workflow has not been restored.
