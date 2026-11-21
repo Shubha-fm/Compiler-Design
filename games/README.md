@@ -91,3 +91,44 @@ bash tests/test_games_11_15.sh
 ```
 
 All five games compiled with GCC in strict C11 mode and passed ten scripted checks before upload. Tests are examples rather than exhaustive verification. The games run in a terminal, not a graphical engine. No C/C++ GitHub Actions workflow was added.
+
+## New games 16–20
+
+| Game | Source | Core concepts |
+|---|---|---|
+| 8-Puzzle | [16_eight_puzzle.c](16_eight_puzzle.c) | Sliding puzzle, state transitions, move validity |
+| Compiler Quiz | [17_compiler_quiz.c](17_compiler_quiz.c) | Five questions about compiler phases, parsing, SSA, liveness, NFAs |
+| Tower of Hanoi | [18_tower_of_hanoi.c](18_tower_of_hanoi.c) | Stacks, legal moves, three-disk puzzle |
+| Lights Out | [19_lights_out.c](19_lights_out.c) | Grid toggling, adjacency, binary state |
+| Memory Match | [20_memory_match.c](20_memory_match.c) | Pair matching, hidden state, turn counting |
+
+These five games have **fixed starting conditions** to make them easy to understand and test. The quiz uses a fixed set of five questions; the puzzles use small fixed boards.
+
+### Build and play
+
+```bash
+gcc -std=c11 -Wall -Wextra -pedantic games/16_eight_puzzle.c -o eight_puzzle
+./eight_puzzle
+
+gcc -std=c11 -Wall -Wextra -pedantic games/17_compiler_quiz.c -o compiler_quiz
+./compiler_quiz
+
+gcc -std=c11 -Wall -Wextra -pedantic games/18_tower_of_hanoi.c -o hanoi
+./hanoi
+
+gcc -std=c11 -Wall -Wextra -pedantic games/19_lights_out.c -o lights_out
+./lights_out
+
+gcc -std=c11 -Wall -Wextra -pedantic games/20_memory_match.c -o memory_match
+./memory_match
+```
+
+Use `w`, `a`, `s`, `d` for 8-Puzzle; `A`, `B`, or `C` for Compiler Quiz; peg numbers 1–3 for Tower of Hanoi; row/column numbers 1–3 for Lights Out; and positions 1–8 for Memory Match. Enter `q` to quit each game.
+
+### Manual game tests
+
+```bash
+bash tests/test_games_16_20.sh
+```
+
+This test script compiles the five games with strict C11 compiler warnings and checks both quitting and solving/winning paths. It has not been executed in the ChatGPT environment. No C/C++ GitHub Actions workflow has been restored.
