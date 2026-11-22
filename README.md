@@ -1,6 +1,6 @@
 # Compiler Design Programs in C
 
-A collection of **290 numbered C programs**, **12 additional parser examples**, and **25 playable C terminal games** for learning programming, compiler construction, and algorithms. Topics include lexical analysis, automata, grammars, top-down and bottom-up parsing, intermediate code generation, optimization, and introductory code analysis.
+A collection of **295 numbered C programs**, **12 additional parser examples**, and **30 playable C terminal games** for learning programming, compiler construction, and algorithms. Topics include lexical analysis, automata, grammars, top-down and bottom-up parsing, intermediate code generation, optimization, and introductory code analysis.
 
 > **Educational scope:** Each program is a standalone example. Several use fixed grammars or demonstrate a single transformation. This repository is not a complete C compiler or a general-purpose parser-generator toolkit.
 
@@ -527,7 +527,7 @@ To compile and test games 16–20 manually:
 bash tests/test_games_16_20.sh
 ```
 
-See [games/README.md](games/README.md) for controls and standalone build commands. The 290 numbered compiler programs, other parser examples, and previously added games remain unchanged. The removed C/C++ CI workflow has not been restored.
+See [games/README.md](games/README.md) for controls and standalone build commands. The 295 numbered compiler programs, other parser examples, and previously added games remain unchanged. The removed C/C++ CI workflow has not been restored.
 
 ### New games 21–25
 
@@ -545,4 +545,30 @@ Build and run manual checks for games 21–25:
 bash tests/test_games_21_25.sh
 ```
 
-[Game instructions and controls](games/README.md). These are independent of the 290 numbered compiler-design programs and 12 parser examples. The removed C/C++ CI workflow has not been restored.
+[Game instructions and controls](games/README.md). These are independent of the 295 numbered compiler-design programs and 12 parser examples. The removed C/C++ CI workflow has not been restored.
+
+## Latest additions: games 26–30 and compiler programs 291–295
+
+This update adds **five C11 games** and **five compiler-design programs** while preserving the earlier examples and parser implementations.
+
+### Games 26–30
+
+- [Mini Checkers](games/26_checkers_mini.c), two-player diagonal moves and captures
+- [15-Puzzle](games/27_fifteen_puzzle.c), a sliding-tile challenge
+- [Dungeon Battle](games/28_dungeon_battle.c), turn-based attack, defense and healing
+- [Conway's Game of Life](games/29_game_of_life.c), cellular automaton simulation
+- [Simon Says](games/30_simon_sequence.c), a progressively longer sequence challenge
+
+Read the [new game guide](games/README_26_30.md) or run `bash tests/test_games_26_30.sh`.
+
+### Compiler programs 291–295
+
+- [291: Token positions](programs/291_lexer_token_positions.c)
+- [292: Postfix regex nullability](programs/292_postfix_regex_nullable.c)
+- [293: Grammar unit-production closure](programs/293_grammar_unit_closure.c)
+- [294: CFG immediate dominators](programs/294_cfg_immediate_dominators.c)
+- [295: Postfix stack-machine code generation](programs/295_postfix_stack_codegen.c)
+
+Read the [new compiler-program guide](programs/README_291_295.md) or run `bash tests/test_programs_291_295.sh`.
+
+Each group has its own manual smoke-test script. The C/C++ CI workflow remains removed.
