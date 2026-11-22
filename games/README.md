@@ -1,6 +1,6 @@
 # C Terminal Games
 
-Twenty-five independent console games written in C11. The games supplement the compiler-design examples and demonstrate recursion, game-state design, arrays, search, validation, and terminal input handling.
+Thirty independent console games written in C11. The games supplement the compiler-design examples and demonstrate recursion, game-state design, arrays, search, validation, and terminal input handling.
 
 | Game | Source | Main concepts |
 |---|---|---|
@@ -175,3 +175,21 @@ bash tests/test_games_21_25.sh
 The test script compiles all five games using strict C11 warning settings and checks ten input sequences. It is intended to run locally; uploading the test script is not evidence that it passed. A full Knight's Tour may take substantial time because the search uses straightforward backtracking. The games use intentionally fixed starting boards and/or secrets.
 
 The C/C++ GitHub Actions CI workflow remains removed.
+
+## Games 26–30: new terminal collection
+
+Five new games extend the C11 game collection from 25 to 30:
+
+- [26: Mini Checkers](26_checkers_mini.c): local two-player movement and captures
+- [27: 15-Puzzle](27_fifteen_puzzle.c): slide numbered tiles into order
+- [28: Dungeon Battle](28_dungeon_battle.c): deterministic turn-based combat with attack, defend, heal
+- [29: Conway's Game of Life](29_game_of_life.c): step through cellular automaton generations
+- [30: Simon Says](30_simon_sequence.c): repeat a growing digit pattern
+
+For build instructions, game controls, design limitations, and the scripted checks, see [games 26–30 guide](README_26_30.md).
+
+```bash
+bash tests/test_games_26_30.sh
+```
+
+Tests are provided for manual execution, and the removed C/C++ CI workflow remains removed.
