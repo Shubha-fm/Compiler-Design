@@ -9,7 +9,7 @@ static int closed(int r,int c){return h[r][c]&&h[r+1][c]&&v[r][c]&&v[r][c+1];}
 int main(void){int player=1,score[3]={0},edges=0;char token[32];
 puts("Dots and Boxes: select H/V ROW COL. Completing a box earns a point and extra turn; q quits.");
 while(edges<12){show();printf("Player %d move: ",player);fflush(stdout);
-if(scanf("%31s",token)!=1||token[0]=='q'&&token[1]==0){puts("Game ended.");return 0;}
+if(scanf("%31s",token)!=1||(token[0]=='q'&&token[1]==0)){puts("Game ended.");return 0;}
 char orientation=token[0];if(token[1]||!(orientation=='H'||orientation=='V')){puts("Use H or V.");continue;}
 int r,c;if(scanf("%d%d",&r,&c)!=2){puts("Invalid coordinates.");return 0;}r--;c--;
 int *edge=NULL;if(orientation=='H'&&r>=0&&r<3&&c>=0&&c<2)edge=&h[r][c];
