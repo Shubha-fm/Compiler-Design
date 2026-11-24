@@ -1,6 +1,6 @@
 # Compiler Design Programs in C
 
-A collection of **300 numbered C programs**, **12 additional parser examples**, and **35 playable C terminal games** for learning programming, compiler construction, and algorithms. Topics include lexical analysis, automata, grammars, top-down and bottom-up parsing, intermediate code generation, optimization, and introductory code analysis.
+A collection of **305 numbered C programs**, **12 additional parser examples**, and **40 playable C terminal games** for learning programming, compiler construction, and algorithms. Topics include lexical analysis, automata, grammars, top-down and bottom-up parsing, intermediate code generation, optimization, and introductory code analysis.
 
 > **Educational scope:** Each program is a standalone example. Several use fixed grammars or demonstrate a single transformation. This repository is not a complete C compiler or a general-purpose parser-generator toolkit.
 
@@ -603,3 +603,34 @@ bash tests/test_programs_296_300.sh
 ```
 
 Previous programs, parser examples, and games are preserved. No C/C++ GitHub Actions CI workflow was restored.
+
+## New games 36–40 and compiler programs 301–305
+
+This update adds **five games** and **five compiler-design examples** in C11, with separate documentation and manual tests.
+
+### New terminal games
+
+- [36 Hexapawn](games/36_hexapawn.c): small pawn-only chess game
+- [37 Word Ladder](games/37_word_ladder.c): valid one-letter transformations
+- [38 Binary Codebreaker](games/38_codebreaker_binary.c): Hamming-distance feedback
+- [39 Three-Pile Nim](games/39_nim_three_piles.c): optimal XOR-based computer strategy
+- [40 Grid Treasure Hunt](games/40_grid_treasure_hunt.c): hazard-avoiding grid navigation
+
+Read the [game instructions](games/README_36_40.md) and [game tests](tests/test_games_36_40.sh).
+
+### New compiler-design programs
+
+- [301 String literal escape validator](programs/301_lexer_string_escapes.c)
+- [302 Regex infix-to-postfix converter](programs/302_regex_infix_to_postfix.c)
+- [303 CFG cyclomatic complexity](programs/303_cfg_cyclomatic_complexity.c)
+- [304 TAC constant propagation](programs/304_tac_constant_propagation.c)
+- [305 Bytecode stack verifier](programs/305_bytecode_stack_verifier.c)
+
+Read the [compiler-program guide](programs/README_301_305.md) and [compiler tests](tests/test_programs_301_305.sh).
+
+```bash
+bash tests/test_games_36_40.sh
+bash tests/test_programs_301_305.sh
+```
+
+These tests are run manually. Existing compiler programs, parser examples and games remain intact. The C/C++ CI workflow has not been recreated.
