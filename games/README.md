@@ -1,6 +1,6 @@
 # C Terminal Games
 
-Thirty independent console games written in C11. The games supplement the compiler-design examples and demonstrate recursion, game-state design, arrays, search, validation, and terminal input handling.
+Thirty-five independent console games written in C11. The games supplement the compiler-design examples and demonstrate recursion, game-state design, arrays, search, validation, and terminal input handling.
 
 | Game | Source | Main concepts |
 |---|---|---|
@@ -193,3 +193,21 @@ bash tests/test_games_26_30.sh
 ```
 
 Tests are provided for manual execution, and the removed C/C++ CI workflow remains removed.
+
+## New games 31–35
+
+Five games extend the collection from 30 to 35:
+
+- [Number Guess](31_number_guess.c): higher/lower feedback for guesses 1–100
+- [Word Search](32_word_search.c): find three words in a 6×6 letter grid
+- [Line Peg Solitaire](33_peg_solitaire.c): legal jumps and peg removal
+- [Dots and Boxes](34_dots_and_boxes.c): draw grid edges and claim completed boxes
+- [Robot Arena](35_robot_arena.c): five-round tactical combat
+
+Find controls, compilation commands, and limitations in the [games 31–35 guide](README_31_35.md). Run the example tests manually:
+
+```bash
+bash tests/test_games_31_35.sh
+```
+
+The removed C/C++ CI workflow has not been reinstated.
