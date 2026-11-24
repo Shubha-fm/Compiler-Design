@@ -1,6 +1,6 @@
 # Compiler Design Programs in C
 
-A collection of **295 numbered C programs**, **12 additional parser examples**, and **30 playable C terminal games** for learning programming, compiler construction, and algorithms. Topics include lexical analysis, automata, grammars, top-down and bottom-up parsing, intermediate code generation, optimization, and introductory code analysis.
+A collection of **300 numbered C programs**, **12 additional parser examples**, and **35 playable C terminal games** for learning programming, compiler construction, and algorithms. Topics include lexical analysis, automata, grammars, top-down and bottom-up parsing, intermediate code generation, optimization, and introductory code analysis.
 
 > **Educational scope:** Each program is a standalone example. Several use fixed grammars or demonstrate a single transformation. This repository is not a complete C compiler or a general-purpose parser-generator toolkit.
 
@@ -572,3 +572,34 @@ Read the [new game guide](games/README_26_30.md) or run `bash tests/test_games_2
 Read the [new compiler-program guide](programs/README_291_295.md) or run `bash tests/test_programs_291_295.sh`.
 
 Each group has its own manual smoke-test script. The C/C++ CI workflow remains removed.
+
+## New games 31–35 and compiler programs 296–300
+
+The latest addition provides **five new terminal games** and **five new compiler-design C programs**.
+
+### Games
+
+- [31: Number Guess](games/31_number_guess.c)
+- [32: Word Search](games/32_word_search.c)
+- [33: Line Peg Solitaire](games/33_peg_solitaire.c)
+- [34: Dots and Boxes](games/34_dots_and_boxes.c)
+- [35: Robot Arena](games/35_robot_arena.c)
+
+See [games 31–35 documentation](games/README_31_35.md) and [manual test script](tests/test_games_31_35.sh).
+
+### Compiler Design
+
+- [296: Lexical token frequency](programs/296_lexer_token_frequency.c)
+- [297: Thompson NFA construction](programs/297_regex_thompson_nfa.c)
+- [298: CFG strongly connected components](programs/298_cfg_strong_components.c)
+- [299: Grammar FIRST and FOLLOW sets](programs/299_grammar_first_follow.c)
+- [300: Stack bytecode virtual machine](programs/300_stack_bytecode_vm.c)
+
+See [programs 296–300 documentation](programs/README_296_300.md) and [manual test script](tests/test_programs_296_300.sh).
+
+```bash
+bash tests/test_games_31_35.sh
+bash tests/test_programs_296_300.sh
+```
+
+Previous programs, parser examples, and games are preserved. No C/C++ GitHub Actions CI workflow was restored.
