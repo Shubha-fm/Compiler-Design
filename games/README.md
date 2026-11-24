@@ -1,6 +1,6 @@
 # C Terminal Games
 
-Thirty-five independent console games written in C11. The games supplement the compiler-design examples and demonstrate recursion, game-state design, arrays, search, validation, and terminal input handling.
+Forty independent console games written in C11. The games supplement the compiler-design examples and demonstrate recursion, game-state design, arrays, search, validation, and terminal input handling.
 
 | Game | Source | Main concepts |
 |---|---|---|
@@ -211,3 +211,21 @@ bash tests/test_games_31_35.sh
 ```
 
 The removed C/C++ CI workflow has not been reinstated.
+
+## New games 36–40
+
+Five further playable C11 terminal games have been added:
+
+- [36 Hexapawn](36_hexapawn.c): pawn-only chess on a 3×3 board
+- [37 Word Ladder](37_word_ladder.c): form a chain of valid three-letter words
+- [38 Binary Codebreaker](38_codebreaker_binary.c): guess a five-bit secret using Hamming-distance clues
+- [39 Three-Pile Nim](39_nim_three_piles.c): compete with a computer using XOR strategy
+- [40 Grid Treasure Hunt](40_grid_treasure_hunt.c): navigate a map and avoid traps
+
+[Read the new games guide](README_36_40.md) for controls and build instructions. Test script:
+
+```bash
+bash tests/test_games_36_40.sh
+```
+
+All games remain separate from the compiler examples. The deleted C/C++ CI workflow was not restored.
