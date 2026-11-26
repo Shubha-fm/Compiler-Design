@@ -1,6 +1,6 @@
 # C Terminal Games
 
-Forty independent console games written in C11. The games supplement the compiler-design examples and demonstrate recursion, game-state design, arrays, search, validation, and terminal input handling.
+Forty-five independent console games written in C11. The games supplement the compiler-design examples and demonstrate recursion, game-state design, arrays, search, validation, and terminal input handling.
 
 | Game | Source | Main concepts |
 |---|---|---|
@@ -229,3 +229,21 @@ bash tests/test_games_36_40.sh
 ```
 
 All games remain separate from the compiler examples. The deleted C/C++ CI workflow was not restored.
+
+## Games 41–45
+
+Five more standalone terminal games extend the collection to **45**:
+
+- [41 Lane Runner](41_lane_runner.c): dodge obstacles across three lanes
+- [42 Anagram Challenge](42_anagram_challenge.c): solve scrambled compiler terms
+- [43 Robot Labyrinth](43_robot_labyrinth.c): explore a maze with a BFS hint
+- [44 Dice Duel](44_dice_duel.c): risk-versus-reward dice game
+- [45 Binary Path Puzzle](45_binary_path_puzzle.c): choose a binary path to treasure
+
+See the [games 41–45 guide](README_41_45.md) for controls, build instructions and limitations.
+
+```bash
+bash tests/test_games_41_45.sh
+```
+
+The C/C++ CI workflow remains removed.
