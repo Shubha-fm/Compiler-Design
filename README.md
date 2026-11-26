@@ -1,6 +1,6 @@
 # Compiler Design Programs in C
 
-A collection of **310 numbered C programs**, **12 additional parser examples**, and **45 playable C terminal games** for learning programming, compiler construction, and algorithms. Topics include lexical analysis, automata, grammars, top-down and bottom-up parsing, intermediate code generation, optimization, and introductory code analysis.
+A collection of **315 numbered C programs**, **12 additional parser examples**, and **50 playable C terminal games** for learning programming, compiler construction, and algorithms. Topics include lexical analysis, automata, grammars, top-down and bottom-up parsing, intermediate code generation, optimization, and introductory code analysis.
 
 > **Educational scope:** Each program is a standalone example. Several use fixed grammars or demonstrate a single transformation. This repository is not a complete C compiler or a general-purpose parser-generator toolkit.
 
@@ -665,3 +665,34 @@ bash tests/test_programs_306_310.sh
 ```
 
 The new exercises have bounded teaching inputs. Existing programs remain unchanged; the previously removed C/C++ CI workflow has not been restored.
+
+## Latest additions: games 46–50 and compiler programs 311–315
+
+Five C11 terminal games and five compiler-design programs extend the collection.
+
+### Games 46–50
+
+- [Morse Quiz](games/46_morse_quiz.c)
+- [Subtraction Nim](games/47_subtraction_nim.c)
+- [Color Code Puzzle](games/48_color_code_puzzle.c)
+- [Timed Grid Escape](games/49_grid_escape_timer.c)
+- [Binary Search Adventure](games/50_binary_search_adventure.c)
+
+[Game instructions](games/README_46_50.md) | [Game smoke tests](tests/test_games_46_50.sh)
+
+### Compiler design programs 311–315
+
+- [311 Comment-aware lexer](programs/311_lexer_line_comment_tokens.c)
+- [312 Dynamic-programming regex matcher](programs/312_regex_dot_star_match.c)
+- [313 CFG topological sorting](programs/313_cfg_topological_order.c)
+- [314 IR strength reduction](programs/314_ir_strength_reduction.c)
+- [315 LL(1) parse-table demonstration](programs/315_ll1_first_follow_table.c)
+
+[Compiler program instructions](programs/README_311_315.md) | [Compiler smoke tests](tests/test_programs_311_315.sh)
+
+```bash
+bash tests/test_games_46_50.sh
+bash tests/test_programs_311_315.sh
+```
+
+All earlier examples are preserved. The removed C/C++ CI workflow has not been restored.
