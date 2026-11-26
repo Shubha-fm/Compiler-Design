@@ -1,6 +1,6 @@
 # C Terminal Games
 
-Forty-five independent console games written in C11. The games supplement the compiler-design examples and demonstrate recursion, game-state design, arrays, search, validation, and terminal input handling.
+Fifty independent console games written in C11. The games supplement the compiler-design examples and demonstrate recursion, game-state design, arrays, search, validation, and terminal input handling.
 
 | Game | Source | Main concepts |
 |---|---|---|
@@ -244,6 +244,24 @@ See the [games 41–45 guide](README_41_45.md) for controls, build instructions 
 
 ```bash
 bash tests/test_games_41_45.sh
+```
+
+The C/C++ CI workflow remains removed.
+
+## Games 46–50
+
+Five additional C11 terminal games bring the collection to **50 games**:
+
+- [46 Morse Quiz](46_morse_quiz.c): decode short Morse patterns
+- [47 Subtraction Nim](47_subtraction_nim.c): play against a modulo-4 computer strategy
+- [48 Color Code Puzzle](48_color_code_puzzle.c): deduce a secret color sequence
+- [49 Timed Grid Escape](49_grid_escape_timer.c): reach an exit within eight moves
+- [50 Binary Search Adventure](50_binary_search_adventure.c): use narrowing hints to find treasure
+
+For controls, build instructions, and limitations, see the [games 46–50 guide](README_46_50.md). Manual sample checks:
+
+```bash
+bash tests/test_games_46_50.sh
 ```
 
 The C/C++ CI workflow remains removed.
