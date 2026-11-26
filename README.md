@@ -1,6 +1,6 @@
 # Compiler Design Programs in C
 
-A collection of **305 numbered C programs**, **12 additional parser examples**, and **40 playable C terminal games** for learning programming, compiler construction, and algorithms. Topics include lexical analysis, automata, grammars, top-down and bottom-up parsing, intermediate code generation, optimization, and introductory code analysis.
+A collection of **310 numbered C programs**, **12 additional parser examples**, and **45 playable C terminal games** for learning programming, compiler construction, and algorithms. Topics include lexical analysis, automata, grammars, top-down and bottom-up parsing, intermediate code generation, optimization, and introductory code analysis.
 
 > **Educational scope:** Each program is a standalone example. Several use fixed grammars or demonstrate a single transformation. This repository is not a complete C compiler or a general-purpose parser-generator toolkit.
 
@@ -634,3 +634,34 @@ bash tests/test_programs_301_305.sh
 ```
 
 These tests are run manually. Existing compiler programs, parser examples and games remain intact. The C/C++ CI workflow has not been recreated.
+
+## Latest additions: games 41–45 and compiler programs 306–310
+
+The repository now contains **310 numbered C compiler-design programs**, **12 additional parser examples**, and **45 playable C terminal games**.
+
+### Five new terminal games
+
+- [Lane Runner](games/41_lane_runner.c): navigate three lanes and avoid collisions
+- [Anagram Challenge](games/42_anagram_challenge.c): unscramble compiler-related words
+- [Robot Labyrinth](games/43_robot_labyrinth.c): grid navigation and BFS path hints
+- [Dice Duel](games/44_dice_duel.c): risk-based scoring with dice
+- [Binary Path Puzzle](games/45_binary_path_puzzle.c): explore binary decisions
+
+See [game instructions](games/README_41_45.md) and [manual game tests](tests/test_games_41_45.sh).
+
+### Five new compiler design programs
+
+- [306: Trie keyword lookup](programs/306_trie_keyword_lookup.c)
+- [307: Regex derivative-state recognizer](programs/307_regex_brzozowski_derivative.c)
+- [308: CFG basic blocks and edges](programs/308_cfg_basic_block_edges.c)
+- [309: IR dead-store elimination](programs/309_ir_dead_store_elimination.c)
+- [310: LR(0) item closure](programs/310_lr0_item_closure.c)
+
+See [compiler-program guide](programs/README_306_310.md) and [manual compiler tests](tests/test_programs_306_310.sh).
+
+```bash
+bash tests/test_games_41_45.sh
+bash tests/test_programs_306_310.sh
+```
+
+The new exercises have bounded teaching inputs. Existing programs remain unchanged; the previously removed C/C++ CI workflow has not been restored.
